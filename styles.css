@@ -212,7 +212,7 @@ em{
   background:var(--butter);
   border-radius:50%;
   position:absolute;
-  right:8%;
+  right:20%;
   top:10%;
 
   z-index:1;
@@ -245,10 +245,10 @@ em{
 .wildflower-illustration{
   position:absolute;
 
-  right:-10%;
+  right:-5%;
   bottom:-5%;
 
-  width:40%;
+  width:88%;
   height:auto;
 
   opacity:.95;
