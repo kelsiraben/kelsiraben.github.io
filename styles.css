@@ -215,10 +215,13 @@ em{
   right:8%;
   top:10%;
 
+  z-index:1;
+
   box-shadow:
     0 0 60px rgba(245,217,139,.55),
     0 0 120px rgba(245,217,139,.25);
 }
+
 
 .circle-note{
   position:absolute;
@@ -234,56 +237,25 @@ em{
   font-family:var(--serif);
   font-size:1.3rem;
   line-height:1.1;
-  transform:rotate(-8deg)
-}
-
-.flower{
-  position:absolute;
-  bottom:0;
-  width:3px;
-  background:var(--sage);
-  transform-origin:bottom center;
-}
-
-.flower::before{
-  content:"";
-  position:absolute;
-
-  width:18px;
-  height:18px;
-
-  border-radius:50%;
-
-  background:white;
-  border:3px solid var(--butter);
-
-  top:-22px;
-  left:50%;
-  transform:translateX(-50%);
-}
-
-.flower-one{
-  height:120px;
-  right:14%;
   transform:rotate(-8deg);
+
+  z-index:3;
 }
 
-.flower-two{
-  height:170px;
-  right:22%;
-  transform:rotate(6deg);
-}
+.wildflower-illustration{
+  position:absolute;
 
-.flower-three{
-  height:140px;
-  right:30%;
-  transform:rotate(-10deg);
-}
+  right:-20%;
+  bottom:-5%;
 
-.flower-four{
-  height:190px;
-  right:8%;
-  transform:rotate(12deg);
+  width:120%;
+  height:auto;
+
+  opacity:.95;
+
+  pointer-events:none;
+
+  z-index:2;
 }
 
 /* WORK */
@@ -538,18 +510,6 @@ footer{
   .project-grid{grid-template-columns:1fr}
   .project-card{min-height:430px}
   .archive-grid{grid-template-columns:1fr 1fr}
-  .archive-card.tall{grid-row:auto
+  .archive-card.tall{grid-row:auto}
 
- .wildflower-illustration{
-  position:absolute;
-
-  right:-5%;
-  bottom:0;
-
-  width:95%;
-  height:auto;
-
-  opacity:.95;
-
-  pointer-events:none;
-}
+ 
