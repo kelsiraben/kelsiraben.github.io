@@ -225,8 +225,8 @@ em{
 
 .circle-note{
   position:absolute;
-  left:10%;
-  bottom:13%;
+  left:14%;
+  bottom:15%;
   width:150px;
   height:150px;
   border-radius:50%;
@@ -245,10 +245,10 @@ em{
 .wildflower-illustration{
   position:absolute;
 
-  right:-20%;
+  right:-10%;
   bottom:-5%;
 
-  width:80%;
+  width:88%;
   height:auto;
 
   opacity:.95;
