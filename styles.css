@@ -237,26 +237,49 @@ em{
   transform:rotate(-8deg)
 }
 
-.leaf{
+.flower{
   position:absolute;
-  border:2px solid var(--sage);
-  border-radius:100% 0 100% 0
+  bottom:0;
+  width:2px;
+  background:rgba(126,150,113,.75);
+  transform-origin:bottom center;
 }
 
-.leaf-one{
-  width:260px;
-  height:150px;
-  right:25%;
-  bottom:18%;
-  transform:rotate(30deg)
+.flower::before{
+  content:"✿";
+  position:absolute;
+  top:-18px;
+  left:50%;
+  transform:translateX(-50%);
+  font-size:22px;
+  color:#fff8ef;
+  text-shadow:
+    0 0 0 #d9c46a,
+    1px 1px 0 #d9c46a;
 }
 
-.leaf-two{
-  width:180px;
-  height:100px;
-  right:5%;
-  bottom:31%;
-  transform:rotate(-20deg)
+.flower-one{
+  height:120px;
+  right:14%;
+  transform:rotate(-6deg);
+}
+
+.flower-two{
+  height:170px;
+  right:22%;
+  transform:rotate(6deg);
+}
+
+.flower-three{
+  height:140px;
+  right:30%;
+  transform:rotate(-10deg);
+}
+
+.flower-four{
+  height:190px;
+  right:8%;
+  transform:rotate(12deg);
 }
 
 /* WORK */
