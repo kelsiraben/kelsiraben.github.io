@@ -539,3 +539,17 @@ footer{
   .project-card{min-height:430px}
   .archive-grid{grid-template-columns:1fr 1fr}
   .archive-card.tall{grid-row:auto
+
+  .wildflower-illustration{
+  position:absolute;
+
+  right:0;
+  bottom:-12%;
+
+  width:68%;
+  height:auto;
+
+  opacity:.95;
+
+  pointer-events:none;
+}
