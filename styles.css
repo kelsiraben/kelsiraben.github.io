@@ -240,28 +240,32 @@ em{
 .flower{
   position:absolute;
   bottom:0;
-  width:2px;
-  background:rgba(126,150,113,.75);
+  width:3px;
+  background:var(--sage);
   transform-origin:bottom center;
 }
 
 .flower::before{
-  content:"✿";
+  content:"";
   position:absolute;
-  top:-18px;
+
+  width:18px;
+  height:18px;
+
+  border-radius:50%;
+
+  background:white;
+  border:3px solid var(--butter);
+
+  top:-22px;
   left:50%;
   transform:translateX(-50%);
-  font-size:22px;
-  color:#fff8ef;
-  text-shadow:
-    0 0 0 #d9c46a,
-    1px 1px 0 #d9c46a;
 }
 
 .flower-one{
   height:120px;
   right:14%;
-  transform:rotate(-6deg);
+  transform:rotate(-8deg);
 }
 
 .flower-two{
