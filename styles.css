@@ -540,13 +540,13 @@ footer{
   .archive-grid{grid-template-columns:1fr 1fr}
   .archive-card.tall{grid-row:auto
 
-  .wildflower-illustration{
+ .wildflower-illustration{
   position:absolute;
 
-  right:0;
-  bottom:-12%;
+  right:-5%;
+  bottom:0;
 
-  width:68%;
+  width:95%;
   height:auto;
 
   opacity:.95;
