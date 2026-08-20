@@ -207,8 +207,8 @@ em{
 }
 
 .sun{
-  width:250px;
-  height:250px;
+  width:150px;
+  height:150px;
   background:var(--butter);
   border-radius:50%;
   position:absolute;
@@ -248,7 +248,7 @@ em{
   right:-10%;
   bottom:-5%;
 
-  width:88%;
+  width:40%;
   height:auto;
 
   opacity:.95;
