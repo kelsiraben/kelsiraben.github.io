@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link
-    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap"
     rel="stylesheet"
   >
 
@@ -27,11 +27,11 @@
 
 <header class="site-header">
 
-  <a class="brand" href="#top">
+  <a class="brand" href="#top" aria-label="Kelsi Raben home">
     KR<span>.</span>
   </a>
 
-  <nav>
+  <nav aria-label="Primary navigation">
     <a href="#work">Work</a>
     <a href="#about">About</a>
     <a href="#archive">Archive</a>
@@ -88,7 +88,7 @@
 
     </div>
 
-    <div class="hero-art">
+    <div class="hero-art" aria-hidden="true">
 
       <div class="sun"></div>
 
@@ -146,7 +146,7 @@
 
       <p>
         I’m a marketing professional who enjoys being involved in
-        the whole process — understanding the audience, shaping the
+        the whole process, understanding the audience, shaping the
         message, designing the creative, and making sure the final
         idea actually works in the real world.
       </p>
@@ -214,16 +214,12 @@
   <section id="contact" class="section contact-section">
 
     <div>
-
-      <p class="eyebrow">
-        Get in touch
-      </p>
+      <p class="eyebrow">Get in touch</p>
 
       <h2>
         Have a project<br>
         in <em>mind?</em>
       </h2>
-
     </div>
 
     <div class="contact-copy">
@@ -277,15 +273,8 @@
 </main>
 
 <footer>
-
-  <span>
-    © <span id="year"></span> Kelsi Raben
-  </span>
-
-  <span>
-    Made with strategy + creativity.
-  </span>
-
+  <span>© <span id="year"></span> Kelsi Raben</span>
+  <span>Made with strategy + creativity.</span>
 </footer>
 
 <script src="content.js"></script>
