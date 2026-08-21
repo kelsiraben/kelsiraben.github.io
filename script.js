@@ -20,17 +20,6 @@ document.addEventListener("DOMContentLoaded", () => {
       .join("");
   }
 
-  const contactEmail = document.querySelector(".contact-email");
-
-  if (
-    contactEmail &&
-    typeof portfolioContact !== "undefined" &&
-    portfolioContact.email
-  ) {
-    contactEmail.textContent = portfolioContact.email;
-    contactEmail.href = `mailto:${portfolioContact.email}`;
-  }
-
   const year = document.getElementById("year");
 
   if (year) {
