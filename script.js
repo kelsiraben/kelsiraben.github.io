@@ -1,1 +1,39 @@
-document.addEventListener("DOMContentLoaded",()=>{const g=document.getElementById("project-grid");g.innerHTML=portfolioProjects.map(p=>`<a class="project-card" href="${p.href}"><span class="project-number">${p.number}</span><span class="project-arrow">↗</span><div><div class="project-kicker">${p.kicker}</div><h3>${p.title}</h3><p>${p.description}</p></div></a>`).join("");document.querySelector(".contact-email").textContent=portfolioContact.email;document.querySelector(".contact-email").href=`mailto:${portfolioContact.email}`;document.querySelectorAll(".contact-links a")[0].href=portfolioContact.linkedin;document.querySelectorAll(".contact-links a")[1].href=portfolioContact.resume;document.getElementById("year").textContent=new Date().getFullYear();});
+document.addEventListener("DOMContentLoaded", () => {
+  const projectGrid = document.getElementById("project-grid");
+
+  if (projectGrid && typeof portfolioProjects !== "undefined") {
+    projectGrid.innerHTML = portfolioProjects
+      .map(
+        (project) => `
+          <a class="project-card" href="${project.href}">
+            <span class="project-number">${project.number}</span>
+            <span class="project-arrow">↗</span>
+
+            <div>
+              <div class="project-kicker">${project.kicker}</div>
+              <h3>${project.title}</h3>
+              <p>${project.description}</p>
+            </div>
+          </a>
+        `
+      )
+      .join("");
+  }
+
+  const contactEmail = document.querySelector(".contact-email");
+
+  if (
+    contactEmail &&
+    typeof portfolioContact !== "undefined" &&
+    portfolioContact.email
+  ) {
+    contactEmail.textContent = portfolioContact.email;
+    contactEmail.href = `mailto:${portfolioContact.email}`;
+  }
+
+  const year = document.getElementById("year");
+
+  if (year) {
+    year.textContent = new Date().getFullYear();
+  }
+});
