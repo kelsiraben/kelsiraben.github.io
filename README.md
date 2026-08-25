@@ -2,16 +2,27 @@
 
 Working portfolio site for Kelsi Raben.
 
-## Editing
-The first version keeps the main editable content in `content.js`. Visual styling is in `styles.css`.
+## Structure
 
-## Next
-- Add real portfolio imagery
-- Build individual case-study pages
-- Add Pacific Press visual case study
-- Add Evansville Otters case study
-- Add Kemper CPA Group case study
-- Build Creative Archive
-- Add headshot and resume
-- Add LinkedIn URL
-- Connect `kelsiraben-portfolio.com`
+- `index.html` — main portfolio page
+- `content.js` — editable portfolio and case-study content
+- `styles.css` — shared visual styling
+- `script.js` — page behavior and content rendering
+- Individual `.html` files — case-study page structures
+- `assets/` — portfolio imagery, resume, and other supporting files
+
+## Current Priorities
+
+- [ ] Add final portfolio imagery
+- [x] Build Pacific Press case-study structure
+- [ ] Finish Pacific Press visual case study
+- [ ] Build Kemper CPA Group case study
+- [ ] Build Evansville Otters case study
+- [ ] Build Creative Archive
+- [ ] Add final headshot
+- [x] Add resume
+- [x] Add LinkedIn URL
+- [ ] Final responsive/mobile review
+- [ ] Accessibility review
+- [ ] SEO/meta review
+- [ ] Connect `kelsiraben-portfolio.com`
