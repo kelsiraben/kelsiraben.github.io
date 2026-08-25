@@ -5,10 +5,10 @@ Working portfolio site for Kelsi Raben.
 ## Structure
 
 - `index.html` — main portfolio page
-- `content.js` — editable portfolio and case-study content
+- `content.js` — editable homepage project content
 - `styles.css` — shared visual styling
 - `script.js` — page behavior and content rendering
-- Individual `.html` files — case-study page structures
+- Individual `.html` files — case-study page structure and content
 - `assets/` — portfolio imagery, resume, and other supporting files
 
 ## Current Priorities
