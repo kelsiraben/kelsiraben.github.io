@@ -229,7 +229,7 @@ nav a:hover::after{
 }
 
 
-/* HERO */
+/* HOMEPAGE HERO */
 
 .hero{
   min-height:calc(100vh - 82px);
@@ -352,7 +352,7 @@ nav a:hover::after{
 }
 
 
-/* HERO HEADSHOT */
+/* HOMEPAGE HERO HEADSHOT */
 
 .hero-photo-wrap{
   position:relative;
@@ -397,7 +397,7 @@ nav a:hover::after{
 }
 
 
-/* HERO PHOTO ACCENT */
+/* HOMEPAGE HERO PHOTO ACCENT */
 
 .hero-photo-accent{
   position:absolute;
@@ -416,7 +416,7 @@ nav a:hover::after{
 }
 
 
-/* HERO BOTANICAL LINE ART */
+/* HOMEPAGE BOTANICAL LINE ART */
 
 .hero-botanical{
   position:absolute;
@@ -450,9 +450,6 @@ nav a:hover::after{
     non-scaling-stroke
 }
 
-
-/* BOTANICAL LEFT */
-
 .hero-botanical-left{
   left:-8%;
 
@@ -465,9 +462,6 @@ nav a:hover::after{
   transform:
     rotate(-3deg)
 }
-
-
-/* BOTANICAL RIGHT */
 
 .hero-botanical-right{
   right:-7%;
@@ -1215,12 +1209,35 @@ footer{
 
 /* KEMPER CASE STUDY HERO */
 
+.case-hero:has(.kemper-hero-visual){
+  max-width:1600px;
+
+  grid-template-columns:
+    minmax(0,.92fr)
+    minmax(500px,1.08fr);
+
+  gap:clamp(3rem,5vw,6rem)
+}
+
+.case-hero:has(.kemper-hero-visual) .case-hero-copy h1{
+  max-width:680px;
+
+  font-size:
+    clamp(3rem,4.6vw,5.25rem);
+
+  line-height:.98
+}
+
+.case-hero:has(.kemper-hero-visual) .case-lede{
+  max-width:620px
+}
+
 .kemper-hero-visual{
   position:relative;
 
-  width:115%;
+  width:118%;
 
-  margin-left:-8%;
+  margin-left:-7%;
 
   padding:0;
 
@@ -1236,11 +1253,11 @@ footer{
 
   position:absolute;
 
-  width:84%;
+  width:86%;
   height:72%;
 
-  right:-3%;
-  bottom:5%;
+  right:-1%;
+  bottom:4%;
 
   z-index:0;
 
@@ -1256,10 +1273,11 @@ footer{
 
   display:block;
 
-  width:125%;
+  width:124%;
+
   max-width:none;
 
-  margin-left:-12%
+  margin-left:-11%
 }
 
 
@@ -1648,6 +1666,19 @@ footer{
       1px solid rgba(41,76,96,.18)
   }
 
+  .case-hero:has(.kemper-hero-visual){
+    grid-template-columns:
+      minmax(0,.95fr)
+      minmax(430px,1.05fr);
+
+    gap:3rem
+  }
+
+  .case-hero:has(.kemper-hero-visual) .case-hero-copy h1{
+    font-size:
+      clamp(3rem,5vw,4.5rem)
+  }
+
 }
 
 
@@ -1735,10 +1766,27 @@ footer{
     padding-top:5rem
   }
 
-  .kemper-hero-visual{
-    width:min(760px,100%);
+  .case-hero:has(.kemper-hero-visual){
+    grid-template-columns:1fr;
 
-    margin:1rem auto 0
+    gap:4rem
+  }
+
+  .case-hero:has(.kemper-hero-visual) .case-hero-copy{
+    max-width:760px
+  }
+
+  .case-hero:has(.kemper-hero-visual) .case-hero-copy h1{
+    max-width:720px;
+
+    font-size:
+      clamp(3.2rem,8vw,5rem)
+  }
+
+  .kemper-hero-visual{
+    width:min(780px,100%);
+
+    margin:0 auto
   }
 
   .kemper-hero-visual img{
@@ -1748,11 +1796,11 @@ footer{
   }
 
   .kemper-hero-visual::before{
-    width:82%;
+    width:84%;
     height:70%;
 
-    right:2%;
-    bottom:6%
+    right:1%;
+    bottom:5%
   }
 
   .case-meta{
@@ -1911,10 +1959,15 @@ footer{
     font-size:3.2rem
   }
 
+  .case-hero:has(.kemper-hero-visual) .case-hero-copy h1{
+    font-size:
+      clamp(2.9rem,12vw,4rem)
+  }
+
   .kemper-hero-visual{
     width:100%;
 
-    margin-top:1.5rem
+    margin-top:1rem
   }
 
   .kemper-hero-visual img{
