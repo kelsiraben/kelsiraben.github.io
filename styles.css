@@ -932,25 +932,29 @@ footer{
 /* PACIFIC PRESS HERO */
 
 .pacific-hero-visual{
-  width:112%;
-  margin-left:-5%
+  width:108%;
+  margin-left:-2%;
+  padding:0 2rem 2rem 0
 }
 
 .pacific-hero-visual::before{
   content:"";
   position:absolute;
-  left:3%;
-  top:7%;
+  right:-1%;
+  bottom:-1%;
   z-index:0;
-  width:96%;
-  height:88%;
+  width:92%;
+  height:86%;
   background:var(--pale-blue);
-  transform:rotate(1.8deg)
+  transform:rotate(-3deg)
 }
 
 .pacific-hero-visual img{
-  width:110%;
-  margin-left:-5%;
+  position:relative;
+  z-index:2;
+  width:100%;
+  max-width:100%;
+  margin:0;
   transform:rotate(.6deg);
   box-shadow:0 25px 65px rgba(0,27,46,.12)
 }
@@ -1347,6 +1351,12 @@ footer{
     gap:4rem
   }
 
+  .pacific-hero-visual{
+    width:105%;
+    padding-right:1.5rem;
+    padding-bottom:1.5rem
+  }
+
   .otters-hero-visual{
     width:88%;
     max-width:600px
@@ -1440,13 +1450,17 @@ footer{
   }
 
   .pacific-hero-visual{
-    width:min(760px,100%);
-    margin:0 auto
+    width:min(720px,95%);
+    margin:0 auto;
+    padding-right:1.5rem;
+    padding-bottom:1.5rem
   }
 
-  .pacific-hero-visual img{
-    width:106%;
-    margin-left:-3%
+  .pacific-hero-visual::before{
+    width:92%;
+    height:84%;
+    right:0;
+    bottom:0
   }
 
   .kemper-hero-visual{
@@ -1639,13 +1653,18 @@ footer{
   }
 
   .pacific-hero-visual{
-    width:100%;
-    margin-top:1rem
+    width:94%;
+    margin-top:1rem;
+    padding-right:1.25rem;
+    padding-bottom:1.25rem
   }
 
-  .pacific-hero-visual img{
-    width:104%;
-    margin-left:-2%
+  .pacific-hero-visual::before{
+    width:92%;
+    height:84%;
+    right:0;
+    bottom:0;
+    transform:rotate(-2deg)
   }
 
   .kemper-hero-visual{
