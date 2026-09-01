@@ -1,0 +1,832 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,500;0,600;1,500&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+
+/* =========================================================
+   KELSI RABEN — PERSONAL BRAND REFRESH V3
+   "Worn Country Quilt" translated into a professional site.
+   VISUAL DESIGN ONLY — preserves existing content and structure.
+   Load this file AFTER styles.css and INSTEAD OF v2.
+   ========================================================= */
+
+:root{
+  --light-denim:#C6D7E6;
+  --worn-denim:#6D89A9;
+  --butter:#F4DDA2;
+  --sage:#B9C9B0;
+  --sherbet:#F2B48F;
+  --soft-pink:#F6C6C6;
+  --eggshell:#F3EDE3;
+
+  /* Darker supporting neutrals for accessibility/readability */
+  --ink:#504D49;
+  --ink-soft:#69645E;
+  --denim-dark:#506A82;
+  --denim-deep:#455E74;
+  --line:rgba(80,77,73,.20);
+
+  /* Remap the original site's variables */
+  --navy:var(--denim-deep);
+  --slate:#617585;
+  --butter-hover:#ECD28F;
+  --gray:#9D9992;
+  --pale-blue:var(--light-denim);
+  --ivory:var(--eggshell);
+  --white:#FFFDF8;
+  --muted:#68645F;
+
+  --sans:"Source Sans 3",Arial,sans-serif;
+  --serif:"Lora",Georgia,serif;
+
+  --shadow-soft:0 14px 34px rgba(72,65,57,.09);
+  --shadow-card:0 14px 30px rgba(72,65,57,.10);
+
+  /* Reusable line-art SVG motifs */
+  --sun-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23506A82' stroke-width='2' stroke-linecap='round'%3E%3Ccircle cx='32' cy='32' r='9'/%3E%3Cpath d='M32 7v10M32 47v10M7 32h10M47 32h10M14.3 14.3l7.1 7.1M42.6 42.6l7.1 7.1M49.7 14.3l-7.1 7.1M21.4 42.6l-7.1 7.1'/%3E%3C/g%3E%3C/svg%3E");
+  --flower-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23506A82' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M32 34c-9 0-14-5-13-11 5-2 10 0 13 6 2-7 7-11 13-10 3 6-1 12-8 15 7 2 10 8 8 14-6 1-11-2-13-8-3 6-8 9-14 7-1-6 3-11 10-13-7-1-11-6-10-12 6-2 11 1 14 7z'/%3E%3Ccircle cx='32' cy='34' r='3'/%3E%3Cpath d='M32 38v17M32 48c-5-5-9-5-12-3 2 5 6 7 12 7M32 46c5-5 9-5 12-3-2 5-6 7-12 7'/%3E%3C/g%3E%3C/svg%3E");
+  --sprig-icon:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 70 70'%3E%3Cg fill='none' stroke='%23506A82' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M19 58c11-12 18-26 29-45'/%3E%3Cpath d='M29 43c-8 0-12-4-13-9 6-2 11 1 15 6M37 31c7 0 12-4 14-9-6-3-12 0-16 6M23 51c-6 0-10-3-11-7 5-2 9 0 12 4M43 22c6 0 10-3 12-7-5-2-10 0-13 4'/%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* -------------------- GLOBAL / TEXTURE -------------------- */
+
+html{
+  background:var(--eggshell);
+}
+
+body{
+  background:
+    linear-gradient(rgba(243,237,227,.96),rgba(243,237,227,.96)),
+    repeating-linear-gradient(
+      90deg,
+      rgba(87,77,66,.035) 0,
+      rgba(87,77,66,.035) 1px,
+      transparent 1px,
+      transparent 4px
+    );
+  color:var(--ink);
+}
+
+/* Fine paper/fabric grain — visible enough to feel tactile,
+   subtle enough to keep photos and typography crisp. */
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:9999;
+  pointer-events:none;
+  opacity:.28;
+  background-image:
+    repeating-linear-gradient(
+      0deg,
+      rgba(92,82,69,.022) 0,
+      rgba(92,82,69,.022) 1px,
+      transparent 1px,
+      transparent 5px
+    ),
+    repeating-linear-gradient(
+      90deg,
+      rgba(92,82,69,.016) 0,
+      rgba(92,82,69,.016) 1px,
+      transparent 1px,
+      transparent 7px
+    );
+}
+
+body,
+p{
+  color:var(--ink);
+}
+
+h1,h2,h3,h4{
+  font-family:var(--serif);
+  color:var(--denim-deep);
+  letter-spacing:-.035em;
+}
+
+h1{
+  font-weight:500;
+  line-height:1.02;
+}
+
+h2{
+  font-weight:500;
+  line-height:1.07;
+}
+
+h3{
+  font-weight:600;
+}
+
+em{
+  font-family:var(--serif);
+  font-style:italic;
+  color:var(--denim-dark);
+}
+
+/* Less corporate than all-caps microtype, but still organized. */
+.eyebrow{
+  font-family:var(--sans);
+  color:#6B655F;
+  font-size:.78rem;
+  font-weight:700;
+  letter-spacing:.10em;
+  text-transform:uppercase;
+}
+
+.section{
+  position:relative;
+}
+
+/* -------------------- HEADER -------------------- */
+
+.site-header{
+  min-height:80px;
+  height:auto;
+  background:rgba(80,106,130,.985);
+  color:var(--eggshell);
+  border-bottom:1px solid rgba(244,221,162,.38);
+  box-shadow:0 8px 24px rgba(61,55,48,.12);
+}
+
+.brand{
+  color:#FFF9EF;
+  font-family:var(--serif);
+  font-weight:600;
+}
+
+.brand span{
+  color:var(--butter);
+}
+
+nav a{
+  color:#FFF9EF;
+  font-family:var(--sans);
+  font-weight:600;
+}
+
+nav a::after{
+  height:1px;
+  background:var(--butter);
+}
+
+nav a:hover,
+.header-resume{
+  color:var(--butter);
+}
+
+.header-resume:hover{
+  color:#FFF9EF;
+}
+
+/* -------------------- HERO -------------------- */
+
+.hero{
+  background:
+    radial-gradient(circle at 85% 16%, rgba(198,215,230,.54), transparent 24rem),
+    radial-gradient(circle at 7% 92%, rgba(244,221,162,.34), transparent 21rem),
+    var(--eggshell);
+}
+
+/* Use existing botanical SVGs again, but recolor/reposition them as
+   quiet hand-drawn embroidery rather than corporate line art. */
+.hero-botanical{
+  display:block !important;
+  color:var(--denim-dark);
+}
+
+.hero-botanical-left{
+  opacity:.16;
+  left:-9%;
+  bottom:-23%;
+  transform:rotate(-5deg);
+}
+
+.hero-botanical-right{
+  opacity:.11;
+  right:-5%;
+  top:2%;
+  transform:rotate(4deg);
+}
+
+.hero-botanical path,
+.hero-botanical circle,
+.hero-botanical ellipse{
+  stroke-width:1.35;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+.hero h1{
+  max-width:820px;
+  color:var(--denim-deep);
+}
+
+.hero h1 em{
+  color:#617E99;
+}
+
+.hero-text{
+  color:#5C5A56;
+  font-size:1.08rem;
+  line-height:1.72;
+}
+
+/* Human, tactile button — not rounded app UI. */
+.button-primary{
+  position:relative;
+  background:var(--butter);
+  color:#4F5150;
+  border:1px solid rgba(99,91,80,.22);
+  border-radius:4px 7px 5px 6px;
+  box-shadow:3px 4px 0 rgba(109,137,169,.20);
+}
+
+.button-primary::after{
+  content:"";
+  position:absolute;
+  inset:5px;
+  border:1px dashed rgba(80,77,73,.25);
+  pointer-events:none;
+}
+
+.button-primary:hover{
+  background:#EFD38D;
+  transform:translate(-1px,-2px);
+  box-shadow:5px 6px 0 rgba(109,137,169,.17);
+}
+
+.secondary-link{
+  color:var(--denim-dark);
+  border-color:var(--denim-dark);
+}
+
+.hero-photo-wrap{
+  padding:12px;
+  background:var(--light-denim);
+  border:1px solid rgba(80,77,73,.16);
+  border-radius:4px;
+  transform:rotate(.35deg);
+  box-shadow:7px 8px 0 rgba(244,221,162,.52);
+}
+
+.hero-photo-wrap::before{
+  content:"";
+  position:absolute;
+  inset:6px;
+  z-index:4;
+  pointer-events:none;
+  border:1px dashed rgba(80,106,130,.54);
+}
+
+.hero-photo{
+  border-radius:2px;
+  box-shadow:0 12px 28px rgba(61,55,48,.10);
+}
+
+.hero-photo-accent{
+  display:none;
+}
+
+/* A single embroidered-style sun tucked near the portrait. */
+.hero-photo-wrap::after{
+  content:"";
+  position:absolute;
+  width:58px;
+  height:58px;
+  right:-35px;
+  top:13%;
+  z-index:5;
+  background-image:var(--sun-icon);
+  background-repeat:no-repeat;
+  background-size:contain;
+  opacity:.72;
+  transform:rotate(8deg);
+}
+
+/* -------------------- INTENTIONAL QUILT DIVIDERS -------------------- */
+
+.work-section::before,
+.archive-section::before{
+  content:"";
+  position:absolute;
+  left:7vw;
+  right:7vw;
+  top:0;
+  height:19px;
+  border-top:1px dashed rgba(80,106,130,.38);
+  background:
+    linear-gradient(
+      90deg,
+      rgba(198,215,230,.95) 0 14%,
+      rgba(244,221,162,.95) 14% 27%,
+      rgba(243,237,227,.9) 27% 43%,
+      rgba(185,201,176,.88) 43% 55%,
+      rgba(198,215,230,.95) 55% 74%,
+      rgba(246,198,198,.70) 74% 84%,
+      rgba(244,221,162,.95) 84% 100%
+    );
+  background-size:230px 9px;
+  background-repeat:repeat-x;
+  background-position:left top;
+  mask-image:linear-gradient(90deg,transparent,#000 5%,#000 95%,transparent);
+  opacity:.68;
+}
+
+.heading-line{
+  width:76px;
+  height:1px;
+  background:var(--denim-dark);
+  position:relative;
+}
+
+.heading-line::after{
+  content:"";
+  position:absolute;
+  width:25px;
+  height:25px;
+  right:-35px;
+  top:-12px;
+  background-image:var(--flower-icon);
+  background-size:contain;
+  background-repeat:no-repeat;
+  opacity:.58;
+}
+
+/* -------------------- WORK -------------------- */
+
+.work-section{
+  background:#FBF7F0;
+}
+
+.section-intro > p,
+.archive-heading > p{
+  color:#66615C;
+}
+
+/* Project cards stay neutral enough to flatter all project brands,
+   but receive quilt construction details around their edges. */
+.project-card{
+  background:#FFFDF8 !important;
+  color:var(--ink) !important;
+  border:1px solid rgba(80,77,73,.18);
+  border-radius:3px 5px 4px 6px;
+  box-shadow:var(--shadow-card);
+}
+
+.project-card::before{
+  content:"";
+  position:absolute;
+  inset:8px;
+  z-index:0;
+  background:none;
+  border:1px dashed rgba(80,106,130,.25);
+  pointer-events:none;
+}
+
+.project-card::after{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:9px;
+  background:
+    linear-gradient(
+      90deg,
+      var(--light-denim) 0 28%,
+      var(--butter) 28% 53%,
+      var(--eggshell) 53% 69%,
+      var(--sage) 69% 84%,
+      var(--soft-pink) 84% 100%
+    );
+}
+
+.project-card:hover{
+  transform:translateY(-5px) rotate(-.08deg);
+  box-shadow:0 20px 38px rgba(72,65,57,.13);
+}
+
+.project-card > *{
+  position:relative;
+  z-index:1;
+}
+
+.project-card h3{
+  color:var(--denim-deep) !important;
+}
+
+.project-kicker,
+.project-number,
+.project-arrow{
+  color:#655F58 !important;
+}
+
+.project-description{
+  color:#5D5954 !important;
+}
+
+/* -------------------- ABOUT -------------------- */
+
+.about-section{
+  background:
+    radial-gradient(circle at 86% 14%, rgba(244,221,162,.30), transparent 22rem),
+    #D9E3EA;
+  border-top:1px solid rgba(80,106,130,.16);
+  border-bottom:1px solid rgba(80,106,130,.16);
+}
+
+.about-section::before{
+  content:"";
+  position:absolute;
+  width:84px;
+  height:84px;
+  right:7vw;
+  top:6.5rem;
+  background-image:var(--sprig-icon);
+  background-size:contain;
+  background-repeat:no-repeat;
+  opacity:.28;
+  transform:rotate(8deg);
+}
+
+.about-copy p{
+  color:#504F4C;
+}
+
+.about-principles{
+  gap:1rem;
+}
+
+/* Remove template-y icon bubbles. */
+.principle{
+  background:rgba(255,253,248,.70);
+  border:1px solid rgba(80,77,73,.15);
+  border-radius:3px 5px 3px 6px;
+  box-shadow:3px 4px 0 rgba(109,137,169,.10);
+}
+
+.principle-icon{
+  width:45px;
+  height:45px;
+  flex:none;
+  font-size:0 !important;
+  background:none !important;
+  border:0 !important;
+  border-radius:0 !important;
+}
+
+.principle-icon::before{
+  content:"";
+  display:block;
+  width:42px;
+  height:42px;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+  opacity:.78;
+}
+
+.principle:nth-child(1) .principle-icon::before{
+  background-image:var(--sun-icon);
+}
+
+.principle:nth-child(2) .principle-icon::before{
+  background-image:var(--flower-icon);
+}
+
+.principle:nth-child(3) .principle-icon::before{
+  background-image:var(--sprig-icon);
+}
+
+.principle strong{
+  color:var(--denim-deep);
+  font-family:var(--serif);
+  font-size:1.08rem;
+  font-weight:600;
+}
+
+.principle p{
+  color:#5D5954;
+}
+
+/* -------------------- CREATIVE ARCHIVE -------------------- */
+
+.archive-section{
+  background:
+    radial-gradient(circle at 10% 88%, rgba(185,201,176,.24), transparent 22rem),
+    var(--eggshell);
+}
+
+.archive-card{
+  position:relative;
+  overflow:hidden;
+  border:1px solid rgba(80,77,73,.18);
+  border-radius:3px 5px 4px 6px;
+  box-shadow:5px 6px 0 rgba(80,106,130,.10);
+}
+
+/* Richer fabric colors, still muted. */
+.archive-photography{ background:#BDD0DF; }
+.archive-design{ background:#EED592; }
+.archive-social{ background:#AEC1A5; }
+.archive-events{ background:#E9BDB6; }
+
+.archive-visual span{
+  font-size:0 !important;
+}
+
+/* Replace generic geometric symbols with the small proprietary motif family. */
+.archive-visual::before{
+  content:"";
+  display:block;
+  width:62px;
+  height:62px;
+  margin:auto;
+  background-repeat:no-repeat;
+  background-position:center;
+  background-size:contain;
+  opacity:.76;
+}
+
+.archive-photography .archive-visual::before{
+  background-image:var(--sun-icon);
+}
+
+.archive-design .archive-visual::before{
+  background-image:var(--flower-icon);
+}
+
+.archive-social .archive-visual::before{
+  background-image:var(--sprig-icon);
+}
+
+.archive-events .archive-visual::before{
+  background-image:var(--flower-icon);
+  transform:rotate(10deg);
+}
+
+.archive-content span{
+  color:#4D5458;
+  font-weight:700;
+}
+
+.archive-content strong{
+  color:#464946;
+  font-family:var(--serif);
+  font-weight:600;
+}
+
+/* -------------------- CONTACT -------------------- */
+
+.contact-section{
+  background:
+    radial-gradient(circle at 88% 18%, rgba(244,221,162,.12), transparent 18rem),
+    var(--denim-deep);
+  color:#FFF9EF;
+}
+
+.contact-section::before{
+  content:"";
+  position:absolute;
+  width:130px;
+  height:130px;
+  right:6vw;
+  bottom:3.5rem;
+  background-image:var(--sun-icon);
+  background-size:contain;
+  background-repeat:no-repeat;
+  filter:brightness(0) invert(1);
+  opacity:.10;
+}
+
+.contact-section::after{
+  content:"sunshine";
+  position:absolute;
+  right:7vw;
+  bottom:2rem;
+  color:rgba(255,249,239,.42);
+  font-family:var(--serif);
+  font-size:1.15rem;
+  font-style:italic;
+  letter-spacing:.01em;
+  transform:rotate(-2deg);
+}
+
+.contact-section h2,
+.contact-section p,
+.contact-section .eyebrow,
+.contact-email,
+.contact-links a{
+  color:#FFF9EF;
+}
+
+.contact-section em{
+  color:var(--butter);
+}
+
+.contact-section .heading-line{
+  background:var(--butter);
+}
+
+.contact-section .heading-line::after{
+  display:none;
+}
+
+/* Remove circular generic contact icon treatment, keep functional symbols. */
+.contact-icon{
+  background:var(--butter);
+  color:#47545C;
+  border:1px solid rgba(255,249,239,.22);
+  border-radius:3px 5px 4px 6px;
+}
+
+footer{
+  background:#40566B;
+  color:rgba(255,249,239,.84);
+  border-top:1px dashed rgba(244,221,162,.34);
+}
+
+.footer-brand{
+  color:#FFF9EF;
+}
+
+.footer-brand span{
+  color:var(--butter);
+}
+
+/* -------------------- CASE-STUDY SHELL --------------------
+   These rules are ready for when v3 is linked on case-study pages.
+   They frame client work without changing/tinting it.
+   --------------------------------------------------------- */
+
+.case-study{
+  background:var(--eggshell);
+}
+
+.case-hero{
+  background:
+    radial-gradient(circle at 91% 10%, rgba(198,215,230,.45), transparent 25rem),
+    var(--eggshell);
+  border-bottom:1px dashed rgba(80,106,130,.28);
+}
+
+.case-hero-copy h1,
+.case-copy h2,
+.case-results h2,
+.gallery-heading h2{
+  color:var(--denim-deep);
+}
+
+.case-hero-visual{
+  padding:10px;
+  background:#FFFDF8;
+  border:1px solid rgba(80,77,73,.16);
+  border-radius:3px 5px 4px 6px;
+  box-shadow:6px 7px 0 rgba(198,215,230,.48);
+}
+
+.case-hero-visual::after{
+  content:"";
+  position:absolute;
+  inset:6px;
+  border:1px dashed rgba(80,106,130,.26);
+  pointer-events:none;
+}
+
+.back-link{
+  color:var(--denim-dark);
+}
+
+.case-meta{
+  border-top:1px dashed rgba(80,106,130,.28);
+}
+
+.case-meta span,
+.case-label,
+.caption-row{
+  color:#68625C;
+}
+
+.case-section{
+  border-bottom:1px dashed rgba(80,106,130,.17);
+}
+
+.role-list span{
+  background:#D6E1E9;
+  color:#4E6578;
+  border:1px solid rgba(80,106,130,.14);
+  border-radius:3px 5px 4px 6px;
+}
+
+.gallery-dark{
+  background:#526B82;
+}
+
+.gallery-dark h2,
+.gallery-dark .eyebrow{
+  color:#FFF9EF;
+}
+
+.gallery-dark figure{
+  background:#FFFDF8;
+  border:1px solid rgba(255,249,239,.26);
+  border-radius:2px;
+}
+
+.case-results{
+  background:#F0DCA9;
+}
+
+.result-grid > div{
+  border-top:1px dashed rgba(80,106,130,.28);
+}
+
+.case-next{
+  background:#D7E2E9;
+}
+
+.case-next a{
+  background:#FFFDF8;
+  border:1px solid rgba(80,77,73,.15);
+  border-radius:3px 5px 4px 6px;
+}
+
+/* Protect all portfolio/client imagery from brand styling. */
+.project-card img,
+.archive-card img,
+.case-study img,
+.case-study video,
+.case-study iframe{
+  filter:none !important;
+  mix-blend-mode:normal !important;
+  opacity:1 !important;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+
+@media (max-width:900px){
+  .hero-photo-wrap{
+    transform:none;
+  }
+
+  .hero-photo-wrap::after{
+    right:-15px;
+    width:45px;
+    height:45px;
+  }
+
+  .about-section::before{
+    width:65px;
+    height:65px;
+    right:4vw;
+  }
+
+  .contact-section::before,
+  .contact-section::after{
+    display:none;
+  }
+}
+
+@media (max-width:680px){
+  .hero{
+    background:
+      radial-gradient(circle at 90% 7%, rgba(198,215,230,.42), transparent 15rem),
+      var(--eggshell);
+  }
+
+  .hero-botanical-right{
+    display:none !important;
+  }
+
+  .hero-botanical-left{
+    opacity:.08;
+  }
+
+  .hero-photo-wrap::after{
+    display:none;
+  }
+
+  .work-section::before,
+  .archive-section::before{
+    left:5vw;
+    right:5vw;
+  }
+
+  .heading-line::after{
+    width:21px;
+    height:21px;
+    right:-29px;
+    top:-10px;
+  }
+
+  .about-section::before{
+    display:none;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  *,
+  *::before,
+  *::after{
+    scroll-behavior:auto !important;
+    transition:none !important;
+  }
+}
