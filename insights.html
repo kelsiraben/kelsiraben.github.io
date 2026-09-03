@@ -2,97 +2,1117 @@
 <html lang="en">
 
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Insights | Kelsi Raben</title>
+  <meta
+    name="description"
+    content="Insights into how Kelsi Raben thinks, works, and creates value across marketing, strategy, design, and execution."
+  >
 
-<link rel="stylesheet" href="styles.css">
+  <title>Insights | Kelsi Raben</title>
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    :root{
+      --insights-ink:#001B2E;
+      --insights-slate:#294C60;
+      --insights-blue:#DCEDFF;
+      --insights-cream:#F8F7F1;
+      --insights-white:#FFFFFF;
+      --insights-yellow:#F4EF9A;
+      --insights-line:rgba(41,76,96,.16);
+      --insights-muted:#5F7482;
+      --insights-soft:#EEF4F7;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body.insights-page{
+      background:var(--insights-cream);
+      color:var(--insights-ink);
+    }
+
+    .insights-page .site-header nav a[aria-current="page"]{
+      color:var(--insights-yellow);
+    }
+
+    .insights-shell{
+      overflow:hidden;
+    }
+
+    .insights-hero{
+      position:relative;
+      display:grid;
+      grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);
+      gap:clamp(3rem,8vw,8rem);
+      align-items:end;
+      min-height:70vh;
+      padding-top:clamp(7rem,12vw,11rem);
+      padding-bottom:clamp(4.5rem,8vw,7rem);
+      border-bottom:1px solid var(--insights-line);
+    }
+
+    .insights-hero::after{
+      content:"";
+      position:absolute;
+      right:-8vw;
+      top:8rem;
+      width:38vw;
+      height:38vw;
+      max-width:540px;
+      max-height:540px;
+      border:1px solid rgba(41,76,96,.08);
+      border-radius:50%;
+      pointer-events:none;
+    }
+
+    .insights-hero-copy{
+      position:relative;
+      z-index:1;
+      max-width:860px;
+    }
+
+    .insights-hero h1{
+      max-width:900px;
+      margin:.65rem 0 1.6rem;
+      font-family:var(--serif);
+      font-size:clamp(3.8rem,7.5vw,7.8rem);
+      line-height:.92;
+      font-weight:500;
+      letter-spacing:-.045em;
+    }
+
+    .insights-hero h1 em{
+      font-weight:400;
+    }
+
+    .insights-hero-text{
+      max-width:670px;
+      margin:0;
+      font-size:clamp(1rem,1.25vw,1.2rem);
+      line-height:1.75;
+      color:var(--insights-slate);
+    }
+
+    .insights-thesis{
+      position:relative;
+      z-index:1;
+      align-self:center;
+      padding:2rem 0 0 2rem;
+      border-left:1px solid var(--insights-line);
+    }
+
+    .insights-thesis-label{
+      display:block;
+      margin-bottom:1rem;
+      font-size:.68rem;
+      font-weight:700;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+      color:var(--insights-slate);
+    }
+
+    .insights-thesis p{
+      margin:0;
+      font-family:var(--serif);
+      font-size:clamp(1.65rem,2.5vw,2.75rem);
+      line-height:1.12;
+      letter-spacing:-.025em;
+    }
+
+    .insights-thesis p em{
+      color:var(--insights-slate);
+    }
+
+    .insights-section{
+      padding-top:clamp(5rem,9vw,9rem);
+      padding-bottom:clamp(5rem,9vw,9rem);
+      border-bottom:1px solid var(--insights-line);
+    }
+
+    .insights-section-heading{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(260px,.55fr);
+      gap:3rem;
+      align-items:end;
+      margin-bottom:clamp(3rem,6vw,5rem);
+    }
+
+    .insights-section-heading h2{
+      max-width:780px;
+      margin:.5rem 0 0;
+      font-family:var(--serif);
+      font-size:clamp(3rem,5.5vw,5.6rem);
+      line-height:.96;
+      font-weight:500;
+      letter-spacing:-.04em;
+    }
+
+    .insights-section-heading > p{
+      margin:0;
+      color:var(--insights-muted);
+      line-height:1.7;
+    }
+
+    .assessment-grid{
+      display:grid;
+      grid-template-columns:repeat(4,minmax(0,1fr));
+      gap:1px;
+      background:var(--insights-line);
+      border:1px solid var(--insights-line);
+    }
+
+    .assessment-card{
+      min-height:310px;
+      padding:2rem;
+      background:var(--insights-white);
+      display:flex;
+      flex-direction:column;
+      justify-content:space-between;
+    }
+
+    .assessment-card:nth-child(2){
+      background:var(--insights-blue);
+    }
+
+    .assessment-card:nth-child(3){
+      background:#F0EEE8;
+    }
+
+    .assessment-card:nth-child(4){
+      background:var(--insights-ink);
+      color:var(--insights-white);
+    }
+
+    .assessment-card .card-index{
+      font-size:.65rem;
+      font-weight:700;
+      letter-spacing:.14em;
+      text-transform:uppercase;
+      opacity:.65;
+    }
+
+    .assessment-card h3{
+      margin:2rem 0 .4rem;
+      font-family:var(--serif);
+      font-size:2rem;
+      line-height:1;
+      font-weight:500;
+    }
+
+    .assessment-card .assessment-result{
+      display:block;
+      margin-bottom:1rem;
+      font-size:.85rem;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+    }
+
+    .assessment-card p{
+      margin:0;
+      font-size:.9rem;
+      line-height:1.65;
+      color:var(--insights-muted);
+    }
+
+    .assessment-card:nth-child(4) p{
+      color:rgba(255,255,255,.72);
+    }
+
+    .pattern-section{
+      background:var(--insights-blue);
+    }
+
+    .pattern-layout{
+      display:grid;
+      grid-template-columns:minmax(260px,.75fr) minmax(0,1.25fr);
+      gap:clamp(3rem,8vw,8rem);
+      align-items:start;
+    }
+
+    .pattern-intro{
+      position:sticky;
+      top:8rem;
+    }
+
+    .pattern-intro h2{
+      margin:.5rem 0 1.25rem;
+      font-family:var(--serif);
+      font-size:clamp(3rem,5vw,5.2rem);
+      line-height:.96;
+      font-weight:500;
+      letter-spacing:-.04em;
+    }
+
+    .pattern-intro p{
+      max-width:430px;
+      color:var(--insights-slate);
+      line-height:1.7;
+    }
+
+    .pattern-list{
+      border-top:1px solid rgba(41,76,96,.18);
+    }
+
+    .pattern-row{
+      display:grid;
+      grid-template-columns:60px minmax(0,1fr);
+      gap:1.25rem;
+      padding:1.65rem 0;
+      border-bottom:1px solid rgba(41,76,96,.18);
+    }
+
+    .pattern-row span{
+      font-family:var(--serif);
+      font-size:1.4rem;
+      font-style:italic;
+      color:var(--insights-slate);
+    }
+
+    .pattern-row strong{
+      display:block;
+      margin-bottom:.35rem;
+      font-family:var(--serif);
+      font-size:clamp(1.4rem,2vw,2rem);
+      font-weight:500;
+    }
+
+    .pattern-row p{
+      margin:0;
+      color:var(--insights-slate);
+      line-height:1.65;
+    }
+
+    .traits-intro{
+      max-width:850px;
+      margin-bottom:3rem;
+    }
+
+    .traits-intro p{
+      max-width:720px;
+      color:var(--insights-muted);
+      line-height:1.75;
+    }
+
+    .traits-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      border-top:1px solid var(--insights-line);
+      border-left:1px solid var(--insights-line);
+    }
+
+    .trait-card{
+      scroll-margin-top:7rem;
+      border-right:1px solid var(--insights-line);
+      border-bottom:1px solid var(--insights-line);
+      background:rgba(255,255,255,.45);
+    }
+
+    .trait-card summary{
+      list-style:none;
+      cursor:pointer;
+      padding:2rem;
+      display:grid;
+      grid-template-columns:52px minmax(0,1fr) auto;
+      gap:1.2rem;
+      align-items:center;
+    }
+
+    .trait-card summary::-webkit-details-marker{
+      display:none;
+    }
+
+    .trait-number{
+      font-family:var(--serif);
+      font-size:1.35rem;
+      font-style:italic;
+      color:var(--insights-slate);
+    }
+
+    .trait-card h3{
+      margin:0;
+      font-family:var(--serif);
+      font-size:clamp(1.8rem,3vw,2.8rem);
+      line-height:1;
+      font-weight:500;
+    }
+
+    .trait-toggle{
+      width:34px;
+      height:34px;
+      border:1px solid var(--insights-line);
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      transition:transform .25s ease;
+      font-size:1.2rem;
+    }
+
+    .trait-card[open] .trait-toggle{
+      transform:rotate(45deg);
+    }
+
+    .trait-body{
+      padding:0 2rem 2.2rem 5.25rem;
+    }
+
+    .trait-body > p{
+      max-width:610px;
+      margin:0 0 1.5rem;
+      font-size:1rem;
+      line-height:1.75;
+      color:var(--insights-muted);
+    }
+
+    .evidence{
+      display:grid;
+      gap:.75rem;
+    }
+
+    .evidence-item{
+      display:grid;
+      grid-template-columns:120px minmax(0,1fr);
+      gap:1rem;
+      align-items:start;
+      padding-top:.8rem;
+      border-top:1px solid var(--insights-line);
+    }
+
+    .evidence-item span{
+      font-size:.68rem;
+      font-weight:700;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+      color:var(--insights-slate);
+    }
+
+    .evidence-item p{
+      margin:0;
+      line-height:1.55;
+    }
+
+    .marketing-fit{
+      background:var(--insights-ink);
+      color:var(--insights-white);
+    }
+
+    .marketing-fit .eyebrow{
+      color:var(--insights-yellow);
+    }
+
+    .marketing-fit-layout{
+      display:grid;
+      grid-template-columns:minmax(0,1fr) minmax(280px,.72fr);
+      gap:clamp(3rem,8vw,8rem);
+      align-items:start;
+    }
+
+    .marketing-fit h2{
+      max-width:800px;
+      margin:.5rem 0 1.5rem;
+      font-family:var(--serif);
+      font-size:clamp(3.4rem,6vw,6.5rem);
+      line-height:.93;
+      font-weight:500;
+      letter-spacing:-.045em;
+    }
+
+    .marketing-fit-copy{
+      padding-top:3rem;
+      border-top:1px solid rgba(255,255,255,.16);
+    }
+
+    .marketing-fit-copy p{
+      margin:0 0 1.2rem;
+      color:rgba(255,255,255,.74);
+      line-height:1.75;
+    }
+
+    .marketing-fit-copy strong{
+      color:var(--insights-white);
+    }
+
+    .superpower{
+      margin-top:3rem;
+      padding-top:2rem;
+      border-top:1px solid rgba(255,255,255,.16);
+      font-family:var(--serif);
+      font-size:clamp(1.7rem,2.8vw,3rem);
+      line-height:1.15;
+    }
+
+    .insights-next{
+      display:flex;
+      justify-content:space-between;
+      gap:2rem;
+      align-items:center;
+      padding-top:3rem;
+      padding-bottom:3rem;
+    }
+
+    .insights-next p{
+      margin:0;
+      color:var(--insights-muted);
+    }
+
+    .insights-next a{
+      font-family:var(--serif);
+      font-size:1.35rem;
+      color:var(--insights-ink);
+      text-decoration:none;
+      border-bottom:1px solid var(--insights-ink);
+    }
+
+    @media (max-width: 980px){
+      .insights-hero,
+      .insights-section-heading,
+      .pattern-layout,
+      .marketing-fit-layout{
+        grid-template-columns:1fr;
+      }
+
+      .insights-thesis{
+        max-width:620px;
+      }
+
+      .assessment-grid{
+        grid-template-columns:repeat(2,minmax(0,1fr));
+      }
+
+      .pattern-intro{
+        position:static;
+      }
+    }
+
+    @media (max-width: 720px){
+      .insights-hero{
+        min-height:auto;
+        padding-top:8rem;
+      }
+
+      .assessment-grid,
+      .traits-grid{
+        grid-template-columns:1fr;
+      }
+
+      .trait-card summary{
+        grid-template-columns:38px minmax(0,1fr) auto;
+        padding:1.5rem;
+      }
+
+      .trait-body{
+        padding:0 1.5rem 1.8rem 1.5rem;
+      }
+
+      .evidence-item{
+        grid-template-columns:1fr;
+        gap:.35rem;
+      }
+
+      .insights-next{
+        flex-direction:column;
+        align-items:flex-start;
+      }
+    }
+  </style>
 </head>
 
-<body>
+<body class="insights-page">
 
 <header class="site-header">
 
-  <a class="brand" href="index.html">
+  <a class="brand" href="index.html#top" aria-label="Kelsi Raben home">
     KR<span>.</span>
   </a>
 
-  <nav>
+  <nav aria-label="Primary navigation">
     <a href="index.html#work">Work</a>
-    insights.htmlInsights</a>
+    <a href="insights.html" aria-current="page">Insights</a>
     <a href="index.html#about">About</a>
+    <a href="index.html#archive">Archive</a>
     <a href="index.html#contact">Contact</a>
   </nav>
 
+  <a
+    class="header-resume"
+    href="assets/resume/Resume%208.4.2026.pdf"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Resume ↗
+  </a>
+
 </header>
 
-<main>
 
-<section class="section">
+<main class="insights-shell">
 
-  <p class="eyebrow">Insights</p>
+  <!-- HERO -->
 
-  <h1>
-    The data behind
-    <em>how I work.</em>
-  </h1>
+  <section class="section insights-hero">
 
-  <p class="hero-text">
-    Through personality, strengths, and career
-    assessments, I explored the patterns that shape
-    how I think, communicate, solve problems,
-    and create value.
-  </p>
+    <div class="insights-hero-copy">
+      <p class="eyebrow">Insights</p>
 
-</section>
+      <h1>
+        How I think.<br>
+        How I work.<br>
+        <em>Why it creates value.</em>
+      </h1>
 
-<section class="section">
-
-  <p class="eyebrow">The Data</p>
-
-  <h2>
-    Multiple assessments.
-    <em>Consistent themes.</em>
-  </h2>
-
-  <div class="insight-grid">
-
-    <div class="insight-card">
-      <h3>DISC</h3>
-      <p>Influence + Steadiness</p>
+      <p class="insights-hero-text">
+        I’ve worked across manufacturing, professional services, and sports marketing.
+        The industries changed, but the way I approached the work kept repeating:
+        understand people, make complexity clearer, connect ideas to larger goals,
+        and carry good thinking all the way through execution.
+      </p>
     </div>
 
-    <div class="insight-card">
-      <h3>16Personalities</h3>
-      <p>INFJ Advocate</p>
+    <aside class="insights-thesis" aria-label="Professional through-line">
+      <span class="insights-thesis-label">The through-line</span>
+      <p>
+        I tend to work in the space between
+        <em>people, ideas, and execution.</em>
+      </p>
+    </aside>
+
+  </section>
+
+
+  <!-- THE DATA -->
+
+  <section class="section insights-section" id="data">
+
+    <div class="insights-section-heading">
+
+      <div>
+        <p class="eyebrow">01 — The Data</p>
+        <h2>
+          Four assessments.<br>
+          <em>One consistent pattern.</em>
+        </h2>
+      </div>
+
+      <p>
+        I used several frameworks as supporting evidence—not as labels.
+        What mattered was where independent assessments kept pointing
+        to the same strengths.
+      </p>
+
     </div>
 
-    <div class="insight-card">
-      <h3>VIA Strengths</h3>
-      <p>Honesty, Kindness, Creativity</p>
+
+    <div class="assessment-grid">
+
+      <article class="assessment-card">
+        <span class="card-index">DISC</span>
+
+        <div>
+          <h3>Influence + Steadiness</h3>
+          <span class="assessment-result">Relationships + consistency</span>
+
+          <p>
+            Collaborative, relationship-focused, communicative, dependable,
+            and naturally oriented toward building trust.
+          </p>
+        </div>
+      </article>
+
+
+      <article class="assessment-card">
+        <span class="card-index">16 Personalities</span>
+
+        <div>
+          <h3>INFJ</h3>
+          <span class="assessment-result">Advocate</span>
+
+          <p>
+            Purpose-driven, future-oriented, people-aware, strategic,
+            and interested in understanding what sits beneath the surface.
+          </p>
+        </div>
+      </article>
+
+
+      <article class="assessment-card">
+        <span class="card-index">VIA Character Strengths</span>
+
+        <div>
+          <h3>Authenticity + Creativity</h3>
+          <span class="assessment-result">Top recurring strengths</span>
+
+          <p>
+            Honesty, kindness, humor, creativity, perspective, fairness,
+            curiosity, bravery, and appreciation of beauty and excellence.
+          </p>
+        </div>
+      </article>
+
+
+      <article class="assessment-card">
+        <span class="card-index">O*NET Interest Profiler</span>
+
+        <div>
+          <h3>Artistic · Social · Enterprising</h3>
+          <span class="assessment-result">Creative + people + business</span>
+
+          <p>
+            A combination that reflects creative thinking, people-centered work,
+            influence, communication, and business awareness.
+          </p>
+        </div>
+      </article>
+
     </div>
 
-    <div class="insight-card">
-      <h3>O*NET</h3>
-      <p>Artistic, Social, Enterprising</p>
+  </section>
+
+
+  <!-- PATTERN RECOGNITION -->
+
+  <section class="section insights-section pattern-section" id="patterns">
+
+    <div class="pattern-layout">
+
+      <div class="pattern-intro">
+        <p class="eyebrow">02 — Pattern Recognition</p>
+
+        <h2>
+          What they<br>
+          <em>agree on.</em>
+        </h2>
+
+        <p>
+          The assessment names are less interesting than the overlap.
+          Across all four, the same themes keep resurfacing.
+        </p>
+      </div>
+
+
+      <div class="pattern-list">
+
+        <div class="pattern-row">
+          <span>01</span>
+          <div>
+            <strong>Relationships matter.</strong>
+            <p>
+              Trust, communication, collaboration, and understanding people
+              are not side skills in my work—they shape how I get things done.
+            </p>
+          </div>
+        </div>
+
+        <div class="pattern-row">
+          <span>02</span>
+          <div>
+            <strong>Creativity needs a purpose.</strong>
+            <p>
+              I’m most energized when creative thinking helps make something
+              clearer, more useful, more engaging, or more effective.
+            </p>
+          </div>
+        </div>
+
+        <div class="pattern-row">
+          <span>03</span>
+          <div>
+            <strong>I naturally translate.</strong>
+            <p>
+              I tend to sit between specialized knowledge and the people who
+              need to understand it—then find the clearest way to connect the two.
+            </p>
+          </div>
+        </div>
+
+        <div class="pattern-row">
+          <span>04</span>
+          <div>
+            <strong>I like turning ideas into something real.</strong>
+            <p>
+              Strategy is important to me, but I’m equally comfortable doing
+              the hands-on work required to bring it to life.
+            </p>
+          </div>
+        </div>
+
+        <div class="pattern-row">
+          <span>05</span>
+          <div>
+            <strong>Curiosity makes me adaptable.</strong>
+            <p>
+              Moving between manufacturing, accounting, and professional baseball
+              required learning quickly, asking good questions, and respecting
+              very different audiences.
+            </p>
+          </div>
+        </div>
+
+      </div>
+
     </div>
 
-  </div>
+  </section>
 
-</section>
+
+  <!-- CORE TRAITS -->
+
+  <section class="section insights-section" id="traits">
+
+    <div class="traits-intro">
+      <p class="eyebrow">03 — Core Traits</p>
+
+      <div class="insights-section-heading" style="margin-bottom:0;">
+        <div>
+          <h2>
+            What that looks like<br>
+            <em>in the work.</em>
+          </h2>
+        </div>
+
+        <p>
+          These six traits are the more useful conclusion. Each one shows up
+          across multiple roles, projects, and industries.
+        </p>
+      </div>
+    </div>
+
+
+    <div class="traits-grid">
+
+      <details class="trait-card" id="connector">
+        <summary>
+          <span class="trait-number">01</span>
+          <h3>Connector</h3>
+          <span class="trait-toggle" aria-hidden="true">+</span>
+        </summary>
+
+        <div class="trait-body">
+          <p>
+            I build trust and create alignment between people who may have
+            different goals, expertise, or perspectives. That relationship-building
+            often becomes the foundation that lets the marketing work move forward.
+          </p>
+
+          <div class="evidence">
+            <div class="evidence-item">
+              <span>Kemper</span>
+              <p>
+                Supported communication and alignment across a complex,
+                multi-office professional-services environment.
+              </p>
+            </div>
+
+            <div class="evidence-item">
+              <span>Otters</span>
+              <p>
+                Connected fans, sponsors, community partners, staff, and players
+                through promotions, outreach, and live experiences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+
+      <details class="trait-card" id="translator">
+        <summary>
+          <span class="trait-number">02</span>
+          <h3>Translator</h3>
+          <span class="trait-toggle" aria-hidden="true">+</span>
+        </summary>
+
+        <div class="trait-body">
+          <p>
+            One of the clearest patterns in my work is translating complexity
+            into something people can understand, use, or connect with.
+            I’m often working between strategy and execution, technical expertise
+            and audience needs, or operations and experience.
+          </p>
+
+          <div class="evidence">
+            <div class="evidence-item">
+              <span>Pacific Press</span>
+              <p>
+                Turned a new brand direction into a real-world system across
+                machines, collateral, physical spaces, and FABTECH.
+              </p>
+            </div>
+
+            <div class="evidence-item">
+              <span>Kemper</span>
+              <p>
+                Helped translate technical expertise into clearer,
+                more approachable marketing communication.
+              </p>
+            </div>
+
+            <div class="evidence-item">
+              <span>Otters</span>
+              <p>
+                Turned day-to-day baseball operations into fan-facing stories,
+                promotions, and experiences.
+              </p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+
+      <details class="trait-card" id="creative-problem-solver">
+        <summary>
+          <span class="trait-number">03</span>
+          <h3>Creative Problem Solver</h3>
+          <span class="trait-toggle" aria-hidden="true">+</span>
+        </summary>
+
+        <div class="trait-body">
+          <p>
+            Creativity is most valuable to me when it solves something.
+            I use design, content, messaging, promotion, and experience-building
+            as tools to make a business challenge easier to understand or act on.
+          </p>
+
+          <div class="evidence">
+            <div class="evidence-item">
+              <span>Pacific Press</span>
+              <p>
+                Built supporting brand applications around an externally developed
+                identity so the rebrand could function consistently in the real world.
+              </p>
+            </div>
+
+            <div class="evidence-item">
+              <span>Otters</span>
+              <p>
+                Developed changing game-night promotions and content to keep
+                the fan experience engaging across an entire season.
+              </p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+
+      <details class="trait-card" id="builder">
+        <summary>
+          <span class="trait-number">04</span>
+          <h3>Builder</h3>
+          <span class="trait-toggle" aria-hidden="true">+</span>
+        </summary>
+
+        <div class="trait-body">
+          <p>
+            I like ownership beyond the idea stage. I’m comfortable moving from
+            concept to planning to production to launch, and I tend to notice
+            the practical details that make a strategy usable.
+          </p>
+
+          <div class="evidence">
+            <div class="evidence-item">
+              <span>Pacific Press</span>
+              <p>
+                Helped carry a five-month brand implementation from new identity
+                through launch at the company’s largest annual event.
+              </p>
+            </div>
+
+            <div class="evidence-item">
+              <span>Kemper</span>
+              <p>
+                Contributed to building a more intentional marketing approach,
+                stronger processes, and greater consistency.
+              </p>
+            </div>
+
+            <div class="evidence-item">
+              <span>Otters</span>
+              <p>
+                Took promotional ideas through the operational details required
+                for live game-day execution.
+              </p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+
+      <details class="trait-card" id="strategist">
+        <summary>
+          <span class="trait-number">05</span>
+          <h3>Strategist</h3>
+          <span class="trait-toggle" aria-hidden="true">+</span>
+        </summary>
+
+        <div class="trait-body">
+          <p>
+            I naturally look beyond the immediate deliverable and ask what it is
+            supposed to accomplish, who needs to respond to it, and how it fits
+            into the larger brand or business goal.
+          </p>
+
+          <div class="evidence">
+            <div class="evidence-item">
+              <span>Pacific Press</span>
+              <p>
+                Approached the rebrand as a connected system rather than a collection
+                of isolated design pieces.
+              </p>
+            </div>
+
+            <div class="evidence-item">
+              <span>Kemper</span>
+              <p>
+                Connected individual marketing needs to broader consistency,
+                communication, employer-branding, and growth goals.
+              </p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+
+      <details class="trait-card" id="curious-learner">
+        <summary>
+          <span class="trait-number">06</span>
+          <h3>Curious Learner</h3>
+          <span class="trait-toggle" aria-hidden="true">+</span>
+        </summary>
+
+        <div class="trait-body">
+          <p>
+            I’ve built marketing experience in industries with very different
+            audiences, terminology, buying cycles, and cultures. Curiosity helps
+            me learn the context quickly rather than assuming one marketing playbook
+            works everywhere.
+          </p>
+
+          <div class="evidence">
+            <div class="evidence-item">
+              <span>Across roles</span>
+              <p>
+                Manufacturing, professional services, and sports each required
+                a different kind of fluency—and each broadened how I think about
+                audiences, communication, and execution.
+              </p>
+            </div>
+          </div>
+        </div>
+      </details>
+
+    </div>
+
+  </section>
+
+
+  <!-- WHY MARKETING FITS -->
+
+  <section class="section insights-section marketing-fit" id="why-marketing">
+
+    <div class="marketing-fit-layout">
+
+      <div>
+        <p class="eyebrow">04 — Why Marketing Fits</p>
+
+        <h2>
+          Marketing lives<br>
+          <em>in the overlap.</em>
+        </h2>
+
+        <div class="superpower">
+          People. Ideas. Clarity. Creativity. Business. Execution.
+        </div>
+      </div>
+
+
+      <div class="marketing-fit-copy">
+
+        <p>
+          The reason marketing has continued to fit me is that it rarely asks
+          for only one kind of thinking.
+        </p>
+
+        <p>
+          It requires understanding people while still understanding the business.
+          It asks for creativity that can support a strategy. It rewards curiosity,
+          communication, judgment, and the ability to make an idea tangible.
+        </p>
+
+        <p>
+          <strong>That combination is where I do my best work.</strong>
+        </p>
+
+        <p>
+          Across my experience, the recurring theme has been bridging the gap
+          between people, ideas, and execution—translating complexity into clarity,
+          building trust, and turning thoughtful ideas into action.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- NEXT -->
+
+  <section class="section insights-next">
+    <p>See these traits in context across the work itself.</p>
+    <a href="index.html#work">Explore selected work →</a>
+  </section>
 
 </main>
 
+
 <footer>
-  <span>© <span id="year"></span> Kelsi Raben</span>
+
+  <div class="footer-brand">
+    KR<span>.</span>
+  </div>
+
+  <span>
+    © <span id="year"></span> Kelsi Raben
+  </span>
+
+  <span>
+    Made with strategy + creativity.
+  </span>
+
 </footer>
 
+
 <script>
-document.getElementById('year').textContent =
-new Date().getFullYear();
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  if (window.location.hash) {
+    const target = document.querySelector(window.location.hash);
+
+    if (target && target.tagName.toLowerCase() === "details") {
+      target.open = true;
+
+      window.setTimeout(() => {
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }, 100);
+    }
+  }
 </script>
 
 </body>
+
 </html>
