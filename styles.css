@@ -1750,3 +1750,46 @@ footer{
   }
 
 }
+/* INSIGHTS PAGE */
+
+.insight-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:1rem;
+  margin-top:3rem;
+}
+
+.insight-card{
+  background:white;
+  padding:2rem;
+  border-radius:20px;
+
+  box-shadow:
+    0 10px 30px rgba(0,0,0,.05);
+}
+
+.insight-card h3{
+  margin-top:0;
+  margin-bottom:.5rem;
+}
+
+.insight-card p{
+  margin:0;
+  color:var(--muted);
+}
+
+@media(max-width:900px){
+
+  .insight-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .insight-grid{
+    grid-template-columns:1fr;
+  }
+
+}
