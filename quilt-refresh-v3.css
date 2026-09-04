@@ -34,8 +34,8 @@
   --sans:"Inter",system-ui,sans-serif;
   --serif:"Fraunces",Georgia,serif;
 
-  --shadow-soft:0 18px 45px rgba(74,68,60,.09);
-  --shadow-patch:5px 7px 0 rgba(80,106,130,.08);
+  --shadow-soft:0 16px 34px rgba(74,68,60,.075);
+  --shadow-patch:3px 5px 0 rgba(80,106,130,.065);
 
   /* Approved artwork */
   --sun:url("assets/quilt-elements/sun.png");
@@ -291,10 +291,10 @@ nav a:hover{color:var(--denim-dark)}
 .hero-photo-wrap::after{
   content:"";
   position:absolute;
-  left:-32%;
-  bottom:-14%;
-  width:72%;
-  height:62%;
+  left:-28%;
+  bottom:-12%;
+  width:78%;
+  height:68%;
   z-index:-3;
   background:var(--pocket) center/contain no-repeat;
   transform:rotate(-9deg);
@@ -318,10 +318,10 @@ nav a:hover{color:var(--denim-dark)}
 .hero-photo::before{
   content:"";
   position:absolute;
-  left:-96px;
-  top:12%;
-  width:88px;
-  height:118px;
+  left:-118px;
+  top:14%;
+  width:122px;
+  height:150px;
   z-index:8;
   background:var(--indiana) center/contain no-repeat;
   transform:rotate(-6deg);
@@ -332,10 +332,10 @@ nav a:hover{color:var(--denim-dark)}
 .hero-photo::after{
   content:"";
   position:absolute;
-  right:14%;
-  top:-23px;
-  width:82px;
-  height:52px;
+  right:13%;
+  top:-29px;
+  width:112px;
+  height:68px;
   z-index:9;
   background:var(--cream-tape) center/contain no-repeat;
   transform:rotate(6deg);
@@ -345,10 +345,10 @@ nav a:hover{color:var(--denim-dark)}
 /* Existing accent becomes a loose patch cluster. */
 .hero-photo-accent{
   display:block!important;
-  right:-20%;
-  bottom:-12%;
-  width:142px;
-  height:154px;
+  right:-18%;
+  bottom:-10%;
+  width:184px;
+  height:196px;
   z-index:6;
   opacity:1;
   background:var(--yellow-gingham) center/contain no-repeat;
@@ -358,10 +358,10 @@ nav a:hover{color:var(--denim-dark)}
 .hero-photo-accent::before{
   content:"";
   position:absolute;
-  right:72%;
-  bottom:58%;
-  width:90px;
-  height:90px;
+  right:67%;
+  bottom:60%;
+  width:132px;
+  height:132px;
   background:var(--sun) center/contain no-repeat;
   transform:rotate(-7deg);
 }
@@ -369,10 +369,10 @@ nav a:hover{color:var(--denim-dark)}
 .hero-photo-accent::after{
   content:"";
   position:absolute;
-  right:-28px;
-  bottom:-28px;
-  width:112px;
-  height:126px;
+  right:-38px;
+  bottom:-34px;
+  width:154px;
+  height:170px;
   background:var(--single-flower) center/contain no-repeat;
   transform:rotate(-6deg);
 }
@@ -388,10 +388,10 @@ nav a:hover{color:var(--denim-dark)}
 .work-section::before{
   content:"";
   position:absolute;
-  right:3.5vw;
-  top:2.5rem;
-  width:100px;
-  height:150px;
+  right:1.2vw;
+  top:1.4rem;
+  width:142px;
+  height:210px;
   background:var(--flower-06) center/contain no-repeat;
   transform:rotate(5deg);
   opacity:.78;
@@ -400,10 +400,10 @@ nav a:hover{color:var(--denim-dark)}
 .work-section::after{
   content:"";
   position:absolute;
-  right:-40px;
-  bottom:2rem;
-  width:165px;
-  height:220px;
+  right:-62px;
+  bottom:1.2rem;
+  width:220px;
+  height:288px;
   background:var(--corn) center/contain no-repeat;
   transform:rotate(6deg);
   opacity:.72;
@@ -419,14 +419,7 @@ nav a:hover{color:var(--denim-dark)}
 }
 
 .heading-line::after{
-  content:"";
-  position:absolute;
-  right:-42px;
-  top:-18px;
-  width:36px;
-  height:42px;
-  background:var(--blue-daisy) center/contain no-repeat;
-  transform:rotate(5deg);
+  content:none;
 }
 
 .project-grid{
@@ -440,7 +433,7 @@ nav a:hover{color:var(--denim-dark)}
   min-height:480px;
   overflow:hidden;
   border:1px solid rgba(83,98,105,.13);
-  border-radius:46px 27px 52px 31px;
+  border-radius:40px 27px 44px 30px;
   box-shadow:var(--shadow-patch);
   transition:transform .3s ease,box-shadow .3s ease;
 }
@@ -452,35 +445,35 @@ nav a:hover{color:var(--denim-dark)}
   z-index:1;
   background:none;
   border:1px dashed rgba(255,255,255,.54);
-  border-radius:36px 19px 42px 23px;
+  border-radius:31px 20px 35px 22px;
   pointer-events:none;
 }
 
 .project-card::after{
   content:"";
   position:absolute;
-  width:92px;
-  height:108px;
+  width:126px;
+  height:142px;
   right:1rem;
   top:1rem;
   background-position:center;
   background-size:contain;
   background-repeat:no-repeat;
-  opacity:.28;
+  opacity:.18;
   pointer-events:none;
 }
 
 .project-card:nth-child(1){
   background:#4F6D83;
   color:#FFF9EF;
-  transform:rotate(-.65deg);
+  transform:rotate(-.28deg);
 }
 .project-card:nth-child(1)::after{background-image:var(--blue-gingham)}
 
 .project-card:nth-child(2){
   background:#D7E3EC;
   color:var(--denim-deep);
-  transform:rotate(.45deg);
+  transform:rotate(.22deg);
 }
 .project-card:nth-child(2)::before{border-color:rgba(64,91,112,.25)}
 .project-card:nth-child(2)::after{background-image:var(--yellow-daisy);opacity:.44}
@@ -488,7 +481,7 @@ nav a:hover{color:var(--denim-dark)}
 .project-card:nth-child(3){
   background:#CDD7C4;
   color:var(--denim-deep);
-  transform:rotate(-.35deg);
+  transform:rotate(-.18deg);
 }
 .project-card:nth-child(3)::before{border-color:rgba(64,91,112,.22)}
 .project-card:nth-child(3)::after{background-image:var(--sage-daisy-alt);opacity:.45}
@@ -570,10 +563,10 @@ nav a:hover{color:var(--denim-dark)}
 .about-heading::after{
   content:"";
   position:absolute;
-  left:-35px;
-  bottom:-120px;
-  width:105px;
-  height:160px;
+  left:-52px;
+  bottom:-136px;
+  width:138px;
+  height:205px;
   background:var(--flower-04) center/contain no-repeat;
   transform:rotate(-7deg);
   opacity:.75;
@@ -582,10 +575,10 @@ nav a:hover{color:var(--denim-dark)}
 .about-copy::before{
   content:"";
   position:absolute;
-  right:-58px;
-  top:-76px;
-  width:102px;
-  height:102px;
+  right:-70px;
+  top:-88px;
+  width:138px;
+  height:138px;
   background:var(--ideas) center/contain no-repeat;
   transform:rotate(5deg);
   opacity:.8;
@@ -601,7 +594,7 @@ nav a:hover{color:var(--denim-dark)}
 }
 
 .principle{
-  grid-template-columns:54px 1fr;
+  grid-template-columns:78px 1fr;
   gap:1rem;
   padding:.65rem 0;
 }
@@ -612,8 +605,8 @@ nav a:hover{color:var(--denim-dark)}
 }
 
 .principle-icon{
-  width:52px;
-  height:62px;
+  width:76px;
+  height:88px;
   border:0;
   border-radius:0;
   font-size:0;
@@ -623,8 +616,8 @@ nav a:hover{color:var(--denim-dark)}
 .principle-icon::before{
   content:"";
   display:block;
-  width:52px;
-  height:62px;
+  width:76px;
+  height:88px;
   background-position:center;
   background-size:contain;
   background-repeat:no-repeat;
@@ -694,15 +687,15 @@ nav a:hover{color:var(--denim-dark)}
 .archive-events{transform:rotate(.42deg)}
 
 .archive-visual{
-  height:142px;
+  height:166px;
   font-size:0;
 }
 
 .archive-visual::before{
   content:"";
   display:block;
-  width:86px;
-  height:96px;
+  width:122px;
+  height:132px;
   background-position:center;
   background-repeat:no-repeat;
   background-size:contain;
@@ -759,10 +752,10 @@ nav a:hover{color:var(--denim-dark)}
 .contact-section::after{
   content:"";
   position:absolute;
-  right:-25px;
-  bottom:-36px;
-  width:165px;
-  height:205px;
+  right:-54px;
+  bottom:-58px;
+  width:230px;
+  height:286px;
   z-index:1;
   background:var(--flower-garden) center/contain no-repeat;
   transform:rotate(5deg);
@@ -778,10 +771,10 @@ nav a:hover{color:var(--denim-dark)}
 .contact-intro::after{
   content:"";
   position:absolute;
-  right:8%;
-  top:-20%;
-  width:90px;
-  height:65px;
+  right:7%;
+  top:-24%;
+  width:116px;
+  height:82px;
   background:var(--pink-tape) center/contain no-repeat;
   transform:rotate(-7deg);
   opacity:.7;
@@ -1036,5 +1029,120 @@ footer{
   *::after{
     scroll-behavior:auto!important;
     transition:none!important;
+  }
+}
+
+/* =========================================================
+   POLISH PASS — cohesion, scale, restraint
+   ========================================================= */
+
+.hero,
+.work-section,
+.about-section,
+.archive-section{
+  padding-top:clamp(5.5rem,8vw,8rem);
+  padding-bottom:clamp(5.5rem,8vw,8rem);
+}
+
+/* Keep decorative art behind content and let it crop naturally into sections. */
+.work-section::before,
+.work-section::after,
+.archive-section::before,
+.archive-section::after,
+.about-heading::after,
+.about-copy::before,
+.contact-section::after,
+.contact-intro::after{
+  pointer-events:none;
+  filter:drop-shadow(0 5px 8px rgba(74,68,60,.055));
+}
+
+/* A calmer stitch treatment: visible, but not "craft-store dashed border". */
+.project-card::before,
+.about-section::after,
+.archive-card::after,
+.contact-section::before,
+.contact-email-block::after,
+.contact-links a::after,
+.hero-photo-wrap::before,
+.button-primary::after,
+.header-resume::after{
+  border-width:1px;
+  opacity:.72;
+}
+
+/* Consistent textile corners across interactive elements. */
+.button-primary,
+.header-resume,
+.contact-email-block,
+.contact-links a{
+  border-radius:22px 15px 25px 17px;
+}
+
+/* Project card typography gets more negative space and stronger hierarchy. */
+.project-card{
+  padding:clamp(2rem,3.4vw,3rem);
+  min-height:450px;
+}
+.project-card h3{
+  max-width:13ch;
+}
+.project-card p{
+  max-width:32ch;
+  line-height:1.65;
+}
+
+/* Archive cards: illustration is intentionally prominent, text stays simple. */
+.archive-card{
+  min-height:300px;
+}
+.archive-visual{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+/* Remove "tiny decorative bits" at tablet/mobile sizes instead of shrinking them into noise. */
+@media(max-width:900px){
+  .hero-photo::before,
+  .hero-photo::after{
+    display:none;
+  }
+  .principle-icon,
+  .principle-icon::before{
+    width:66px;
+    height:76px;
+  }
+  .about-principles{
+    padding-left:1rem;
+  }
+}
+
+@media(max-width:680px){
+  .work-section::before,
+  .archive-section::before{
+    display:none;
+  }
+
+  .work-section::after{
+    width:150px;
+    height:195px;
+    right:-55px;
+    opacity:.42;
+  }
+
+  .principle{
+    grid-template-columns:58px 1fr;
+  }
+
+  .principle-icon,
+  .principle-icon::before{
+    width:54px;
+    height:64px;
+  }
+
+  .archive-visual::before{
+    width:100px;
+    height:110px;
   }
 }
