@@ -1146,3 +1146,387 @@ footer{
     height:110px;
   }
 }
+
+/* =========================================================
+   HERO + SELECTED WORK COMPOSITION PASS
+   September 2026
+   Goal: one composed textile system, not scattered stickers.
+   ========================================================= */
+
+/* --- HERO: simplify, enlarge, connect --- */
+
+.hero{
+  min-height:auto;
+  padding-top:clamp(5.8rem,8vw,8.4rem);
+  padding-bottom:clamp(8.4rem,11vw,11.2rem);
+  overflow:hidden;
+  background:
+    radial-gradient(ellipse at 82% 34%, rgba(198,215,230,.36) 0, rgba(198,215,230,.16) 24rem, transparent 36rem),
+    var(--eggshell);
+}
+
+/* Remove the loose flower behind the copy. The text gets to breathe. */
+.hero-copy::before{
+  content:none;
+}
+
+/* The quilt ribbon now acts as the architectural transition into Work. */
+.hero-copy::after{
+  content:"";
+  position:absolute;
+  left:-8vw;
+  width:112vw;
+  right:auto;
+  bottom:calc(-1 * clamp(8.4rem,11vw,11.2rem) - 58px);
+  height:132px;
+  z-index:-2;
+  background:var(--ribbon) center/cover no-repeat;
+  transform:rotate(-.35deg);
+  opacity:.94;
+  pointer-events:none;
+}
+
+/* Give the text column slightly more editorial calm. */
+.hero-copy{
+  max-width:680px;
+}
+
+.hero .eyebrow{
+  margin-bottom:1.15rem;
+}
+
+.hero h1{
+  max-width:12.5ch;
+  line-height:.98;
+  letter-spacing:-.035em;
+}
+
+.hero-text{
+  max-width:54ch;
+  margin-top:1.45rem;
+  line-height:1.72;
+}
+
+.hero-actions{
+  margin-top:2rem;
+  gap:1.15rem;
+}
+
+/* Keep the approved butter patch CTA, but make it feel sewn rather than button-like. */
+.button-primary{
+  padding:1.12rem 1.72rem;
+  border-radius:26px 17px 30px 20px;
+  box-shadow:4px 5px 0 rgba(109,137,169,.085);
+}
+
+.button-primary::after{
+  inset:6px;
+  border-radius:19px 11px 23px 14px;
+}
+
+/* --- HERO COLLAGE --- */
+
+/* The portrait is the hero. Everything else supports it. */
+.hero-photo-wrap{
+  max-width:540px;
+  padding:14px;
+  margin-right:clamp(.5rem,2vw,2rem);
+  background:#EEE7DC;
+  border:1px solid rgba(114,100,85,.12);
+  border-radius:54px 31px 60px 37px;
+  transform:rotate(.65deg);
+  box-shadow:0 20px 42px rgba(74,68,60,.085);
+}
+
+/* inset hand-stitch */
+.hero-photo-wrap::before{
+  inset:8px;
+  border-color:rgba(130,107,84,.30);
+  border-radius:44px 23px 50px 29px;
+  opacity:.78;
+}
+
+/* Large denim pocket behind the lower left — intentionally cropped. */
+.hero-photo-wrap::after{
+  left:-31%;
+  bottom:-16%;
+  width:82%;
+  height:72%;
+  z-index:-2;
+  background:var(--pocket) center/contain no-repeat;
+  transform:rotate(-7deg);
+  filter:drop-shadow(3px 7px 7px rgba(57,50,44,.075));
+}
+
+/* Keep the actual portrait shape quiet and polished. */
+.hero-photo{
+  overflow:hidden;
+  border-radius:42px 24px 48px 29px;
+}
+
+/* Remove the small stamp + tape from the portrait itself.
+   Those assets can live elsewhere on the site at proper scale. */
+.hero-photo::before,
+.hero-photo::after{
+  content:none;
+}
+
+/* One large butter patch anchors the right side. */
+.hero-photo-accent{
+  right:-21%;
+  bottom:-11%;
+  width:224px;
+  height:235px;
+  z-index:4;
+  background:var(--yellow-gingham) center/contain no-repeat;
+  transform:rotate(4deg);
+}
+
+/* Sunshine becomes a major supporting mark instead of a tiny icon. */
+.hero-photo-accent::before{
+  right:58%;
+  bottom:72%;
+  width:174px;
+  height:174px;
+  background:var(--sun) center/contain no-repeat;
+  transform:rotate(-5deg);
+  filter:drop-shadow(0 4px 5px rgba(74,68,60,.05));
+}
+
+/* One floral group only — larger, lower, and partially cropped. */
+.hero-photo-accent::after{
+  right:-52px;
+  bottom:-62px;
+  width:198px;
+  height:214px;
+  background:var(--flower-09) center/contain no-repeat;
+  transform:rotate(-4deg);
+  opacity:.92;
+}
+
+/* --- SELECTED WORK: let the quilt transition lead into clean content --- */
+
+.work-section{
+  padding-top:clamp(7rem,9vw,9rem);
+  background:#FFFDF8;
+  overflow:hidden;
+}
+
+/* Remove the small floating sprig at the top. */
+.work-section::before{
+  content:none;
+}
+
+/* Keep one Midwest signature, but treat it as a cropped edge illustration. */
+.work-section::after{
+  right:-88px;
+  bottom:-22px;
+  width:260px;
+  height:340px;
+  opacity:.42;
+  transform:rotate(4deg);
+}
+
+.section-intro{
+  max-width:760px;
+  margin-bottom:clamp(2.6rem,4vw,4rem);
+}
+
+.heading-line{
+  width:88px;
+  height:3px;
+  border-radius:20px;
+  background:var(--butter);
+}
+
+/* Cards share one visual rhythm. The fabric differences are enough personality. */
+.project-grid{
+  gap:clamp(1.25rem,2vw,1.8rem);
+}
+
+.project-card{
+  min-height:430px;
+  padding:clamp(2.1rem,3vw,2.8rem);
+  border-radius:34px 25px 38px 28px;
+  box-shadow:0 9px 20px rgba(57,51,45,.055);
+  transform:none!important;
+}
+
+/* stitched line sits closer to the edge and is deliberately subtle */
+.project-card::before{
+  inset:8px;
+  border-radius:27px 18px 31px 21px;
+  opacity:.48;
+}
+
+/* Remove the little "sticker in the corner" treatment.
+   The cards themselves ARE the quilt blocks. */
+.project-card::after{
+  content:none;
+}
+
+.project-card:hover{
+  transform:translateY(-5px)!important;
+  box-shadow:0 16px 28px rgba(57,51,45,.085);
+}
+
+.project-card h3{
+  max-width:11.5ch;
+  margin-top:auto;
+}
+
+.project-card p{
+  max-width:34ch;
+  line-height:1.62;
+}
+
+/* The three blocks stay faded and textile-inspired, not saturated. */
+.project-card:nth-child(1){
+  background:#58748A;
+}
+
+.project-card:nth-child(2){
+  background:#D8E4EC;
+}
+
+.project-card:nth-child(3){
+  background:#CCD7C3;
+}
+
+/* More confident numbers/arrows; tiny details were part of the unfinished feeling. */
+.project-number{
+  font-size:1rem;
+  letter-spacing:.08em;
+}
+
+.project-arrow{
+  font-size:1.45rem;
+}
+
+/* --- DESKTOP COMPOSITION HELPERS --- */
+
+@media(min-width:901px){
+  .hero{
+    column-gap:clamp(3rem,6vw,7rem);
+  }
+
+  .hero-photo-wrap{
+    align-self:center;
+  }
+}
+
+/* --- TABLET --- */
+
+@media(max-width:900px){
+  .hero{
+    padding-bottom:8.5rem;
+  }
+
+  .hero-copy::after{
+    left:-12vw;
+    width:124vw;
+    bottom:-9.7rem;
+    height:104px;
+  }
+
+  .hero-photo-wrap{
+    max-width:470px;
+    margin:2.5rem auto 0;
+  }
+
+  .hero-photo-wrap::after{
+    left:-17%;
+    bottom:-10%;
+    width:64%;
+    height:58%;
+  }
+
+  .hero-photo-accent{
+    right:-10%;
+    width:174px;
+    height:188px;
+  }
+
+  .hero-photo-accent::before{
+    width:132px;
+    height:132px;
+  }
+
+  .hero-photo-accent::after{
+    width:145px;
+    height:160px;
+    right:-28px;
+    bottom:-40px;
+  }
+
+  .work-section{
+    padding-top:6.4rem;
+  }
+}
+
+/* --- MOBILE: one clear personality moment, no visual confetti --- */
+
+@media(max-width:680px){
+  .hero{
+    padding-top:4.8rem;
+    padding-bottom:7.5rem;
+  }
+
+  .hero-copy::after{
+    bottom:-8.55rem;
+    height:86px;
+  }
+
+  .hero-photo-wrap{
+    width:90%;
+    padding:10px;
+    margin-top:2.6rem;
+    border-radius:38px 24px 43px 27px;
+  }
+
+  .hero-photo{
+    border-radius:30px 18px 35px 21px;
+  }
+
+  .hero-photo-wrap::after{
+    left:-12%;
+    bottom:-8%;
+    width:55%;
+    height:50%;
+  }
+
+  .hero-photo-accent{
+    display:block!important;
+    width:124px;
+    height:138px;
+    right:-7%;
+    bottom:-7%;
+  }
+
+  /* Keep the sun; remove the extra floral cluster on small screens. */
+  .hero-photo-accent::before{
+    display:block;
+    width:98px;
+    height:98px;
+    right:58%;
+    bottom:75%;
+  }
+
+  .hero-photo-accent::after{
+    display:none;
+  }
+
+  .work-section{
+    padding-top:5.5rem;
+  }
+
+  .work-section::after{
+    display:none;
+  }
+
+  .project-card{
+    min-height:360px;
+    border-radius:30px 22px 33px 24px;
+  }
+}
+
