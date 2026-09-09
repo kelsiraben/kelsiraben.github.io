@@ -22,6 +22,28 @@
 
   <link rel="stylesheet" href="styles.css">
 <link rel="stylesheet" href="quilt-refresh-v3.css?v=4">
+
+<style>
+.site-header nav{overflow:visible}
+.nav-work-dropdown{position:relative;display:flex;align-items:center}
+.nav-work-trigger{display:flex;align-items:center}
+.nav-work-trigger>a{white-space:nowrap}
+.nav-work-toggle{appearance:none;border:0;background:transparent;color:inherit;font:inherit;line-height:1;padding:.35rem .15rem .35rem .2rem;margin:0;cursor:pointer}
+.nav-work-toggle span{display:inline-block;font-size:.72em;transition:transform .18s ease}
+.nav-work-dropdown.is-open .nav-work-toggle span{transform:rotate(180deg)}
+.nav-work-menu{position:absolute;z-index:1000;top:calc(100% + .7rem);left:0;min-width:15.5rem;padding:.55rem;background:#FAF7F0;border:1px solid rgba(36,59,83,.18);border-radius:1rem;box-shadow:0 12px 30px rgba(36,59,83,.12);opacity:0;visibility:hidden;transform:translateY(-.35rem);transition:opacity .18s ease,transform .18s ease,visibility .18s ease}
+.nav-work-menu a{display:block;padding:.7rem .8rem;border-radius:.7rem;white-space:nowrap;text-decoration:none}
+.nav-work-menu a:hover,.nav-work-menu a:focus-visible{background:rgba(245,217,139,.28)}
+.nav-work-dropdown:hover .nav-work-menu,.nav-work-dropdown:focus-within .nav-work-menu,.nav-work-dropdown.is-open .nav-work-menu{opacity:1;visibility:visible;transform:translateY(0)}
+@media (max-width:760px){
+  .nav-work-dropdown{position:static}
+  .nav-work-menu{top:100%;left:1rem;right:1rem;min-width:0;width:auto}
+  .nav-work-dropdown:hover .nav-work-menu{opacity:0;visibility:hidden;transform:translateY(-.35rem)}
+  .nav-work-dropdown.is-open .nav-work-menu,.nav-work-dropdown:focus-within .nav-work-menu{opacity:1;visibility:visible;transform:translateY(0)}
+  .nav-work-menu a{white-space:normal}
+}
+</style>
+
 </head>
 
 <body>
@@ -34,7 +56,22 @@
 
 <nav aria-label="Primary navigation">
 
-  <a href="#work">Work</a>
+  <div class="nav-work-dropdown">
+    <div class="nav-work-trigger">
+      <a href="#work">Work</a>
+      <button class="nav-work-toggle" type="button" aria-expanded="false"
+        aria-controls="work-dropdown-menu" aria-label="Show work menu">
+        <span aria-hidden="true">▾</span>
+      </button>
+    </div>
+
+    <div class="nav-work-menu" id="work-dropdown-menu">
+      <a href="kemper.html">Kemper CPA Group LLP</a>
+      <a href="otters.html">The Evansville Otters</a>
+      <a href="pacific-press.html">Pacific Press Holdings, LLC</a>
+    </div>
+  </div>
+
   <a href="insights.html">Insights</a>
   <a href="#about">About</a>
   <a href="#archive">Archive</a>
@@ -673,6 +710,37 @@
 
 <script src="content.js"></script>
 <script src="script.js"></script>
+
+
+<script>
+(() => {
+  const dropdown = document.querySelector('.nav-work-dropdown');
+  const toggle = document.querySelector('.nav-work-toggle');
+  if (!dropdown || !toggle) return;
+
+  const closeMenu = () => {
+    dropdown.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  };
+
+  toggle.addEventListener('click', (event) => {
+    event.stopPropagation();
+    const isOpen = dropdown.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!dropdown.contains(event.target)) closeMenu();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      closeMenu();
+      toggle.focus();
+    }
+  });
+})();
+</script>
 
 </body>
 
