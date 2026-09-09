@@ -22,9 +22,32 @@
 
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="quilt-inner-pages.css?v=1">
+
+<style>
+  /* Larger evidence cards for social + email performance */
+  .kemper-case .metric-grid > div {
+    padding: 2.25rem;
+    min-height: 15rem;
+  }
+
+  .kemper-case .metric-grid > div > strong {
+    font-size: 150%;
+    line-height: 1;
+    display: block;
+    margin-bottom: 1.25rem;
+  }
+
+  @media (max-width: 760px) {
+    .kemper-case .metric-grid > div {
+      padding: 1.75rem;
+      min-height: auto;
+    }
+  }
+</style>
+
 </head>
 
-<body>
+<body class="kemper-case">
 
 <header class="site-header">
 
@@ -316,7 +339,7 @@
       channel ownership.
     </p>
 
-    <div class="result-grid">
+    <div class="result-grid metric-grid">
 
       <div>
         <strong>+489</strong>
@@ -344,7 +367,7 @@
 
     </div>
 
-    <div class="result-grid">
+    <div class="result-grid metric-grid">
 
       <div>
         <strong>+7.5%</strong>
@@ -414,7 +437,7 @@
         how audiences were responding to content distributed at scale.
       </p>
 
-      <div class="result-grid">
+      <div class="result-grid metric-grid">
 
         <div>
           <strong>
