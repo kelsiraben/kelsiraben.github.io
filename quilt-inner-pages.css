@@ -1071,3 +1071,12 @@ body.insights-page{
     scroll-behavior:auto!important;
   }
 }
+/* Insights — yellow background text contrast */
+.insights-page .marketing-fit,
+.insights-page .marketing-fit h2,
+.insights-page .marketing-fit h2 em,
+.insights-page .marketing-fit p,
+.insights-page .marketing-fit strong,
+.insights-page .marketing-fit span {
+  color: var(--denim-deep) !important;
+}
