@@ -1,0 +1,11 @@
+/* Recruiter clarity layer: intentionally preserves the approved quilt design. */
+.proof-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:1rem;margin:0 0 2.25rem}
+.proof-strip a{display:flex;flex-direction:column;justify-content:center;gap:.45rem;min-height:7.25rem;padding:1.25rem 1.15rem;background:#fffdf8;border:1px solid rgba(80,106,130,.23);border-radius:1.35rem;text-decoration:none;color:#405b70;box-shadow:3px 5px 0 rgba(80,106,130,.065);transition:transform .18s ease,box-shadow .18s ease}
+.proof-strip a:nth-child(2){background:#f6f2eb}
+.proof-strip a:nth-child(3){background:#f9f1d8}
+.proof-strip a:nth-child(4){background:#eef2e9}
+.proof-strip a:hover,.proof-strip a:focus-visible{transform:translateY(-3px);box-shadow:4px 8px 0 rgba(80,106,130,.10);outline-offset:4px}
+.proof-strip strong{font-family:"Fraunces",Georgia,serif;font-size:1.14rem;line-height:1.2}
+.proof-strip span{font-family:"Inter",sans-serif;font-size:.8rem;line-height:1.5;color:#56514c}
+@media(max-width:900px){.proof-strip{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:520px){.proof-strip{grid-template-columns:1fr;gap:.7rem}.proof-strip a{min-height:0;padding:1rem 1.1rem}}
