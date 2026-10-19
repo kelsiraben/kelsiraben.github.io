@@ -49,6 +49,21 @@
   .nav-work-dropdown.is-open .nav-work-menu,.nav-work-dropdown:focus-within .nav-work-menu{opacity:1;visibility:visible;transform:translateY(0)}
   .nav-work-menu a{white-space:normal}
 }
+.mobile-menu-toggle{display:none}
+@media(max-width:900px){
+ .site-header{position:relative;z-index:1002}
+ .mobile-menu-toggle{display:flex;align-items:center;gap:.45rem;margin-left:auto;padding:.55rem .85rem;border:1px solid #aeb9b2;border-radius:14px;background:#fffdf8;color:#243b53;font:600 .95rem Inter,sans-serif;cursor:pointer}
+ .site-header #primary-nav{display:none;position:absolute;top:calc(100% - 1px);left:0;right:0;z-index:1001;background:#faf7f0;border:1px solid #d5d9d2;border-top:0;box-shadow:0 12px 22px #243b5320;padding:1rem 6vw 1.4rem;flex-direction:column;align-items:stretch;gap:.35rem;max-height:calc(100dvh - 75px);overflow-y:auto}
+ .site-header #primary-nav.mobile-open{display:flex}
+ .site-header #primary-nav>a,.site-header .nav-work-trigger>a{display:block;padding:.8rem .5rem;text-decoration:none}
+ .site-header .nav-work-dropdown{display:block;position:relative}
+ .site-header .nav-work-trigger{justify-content:space-between}
+ .site-header .nav-work-menu{position:static;display:none;opacity:1;visibility:visible;transform:none;box-shadow:none;margin:.2rem 0 .5rem;padding:.35rem;min-width:0;width:100%;background:#fffdf8}
+ .site-header .nav-work-dropdown.is-open .nav-work-menu{display:block}
+ .site-header .nav-work-dropdown:hover .nav-work-menu,.site-header .nav-work-dropdown:focus-within .nav-work-menu{display:none}
+ .site-header .nav-work-dropdown.is-open:hover .nav-work-menu,.site-header .nav-work-dropdown.is-open:focus-within .nav-work-menu{display:block}
+ .site-header .nav-work-menu a{white-space:normal}
+}
 </style>
 
 </head>
@@ -61,7 +76,8 @@
     KR<span>.</span>
   </a>
 
-<nav aria-label="Primary navigation">
+<button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav" aria-label="Open navigation menu"><span aria-hidden="true">☰</span><span class="mobile-menu-label">Menu</span></button>
+<nav id="primary-nav" aria-label="Primary navigation">
 
   <div class="nav-work-dropdown">
     <div class="nav-work-trigger">
@@ -557,7 +573,7 @@
 
     <div class="archive-grid" aria-label="Creative work categories">
 
-      <a href="creative-archive.html#photography" class="archive-card archive-photography">
+      <a href="creative-archive.html#family" class="archive-card archive-photography">
 
         <div class="archive-visual">
           <span>✦</span>
@@ -729,9 +745,23 @@
 
 <script>
 (() => {
+  const mobileToggle = document.querySelector('.mobile-menu-toggle');
+  const primaryNav = document.querySelector('#primary-nav');
   const dropdown = document.querySelector('.nav-work-dropdown');
   const toggle = document.querySelector('.nav-work-toggle');
   if (!dropdown || !toggle) return;
+  const closeMobile = () => {
+    primaryNav?.classList.remove('mobile-open');
+    mobileToggle?.setAttribute('aria-expanded', 'false');
+    mobileToggle?.setAttribute('aria-label', 'Open navigation menu');
+  };
+  mobileToggle?.addEventListener('click', () => {
+    const isOpen = primaryNav.classList.toggle('mobile-open');
+    mobileToggle.setAttribute('aria-expanded', String(isOpen));
+    mobileToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
+    if (!isOpen) closeMenu();
+  });
+  primaryNav?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMobile));
 
   const closeMenu = () => {
     dropdown.classList.remove('is-open');
@@ -751,7 +781,8 @@
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
       closeMenu();
-      toggle.focus();
+      closeMobile();
+      mobileToggle?.focus();
     }
   });
 })();
