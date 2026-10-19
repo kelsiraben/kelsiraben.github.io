@@ -53,3 +53,11 @@
 }
 @media(max-width:680px){.archive-patch-grid .archive-fabric-patch{transform:none!important;min-height:310px}.archive-patch-grid .archive-visual{height:190px}}
 @media(prefers-reduced-motion:reduce){.archive-patch-grid .archive-fabric-patch{transition:none}}
+
+/* Fix: quilt-element images are individual patch illustrations, not seamless tiles.
+   Stretch one patch across each card rather than repeating small squares. */
+.archive-patch-grid .archive-fabric-patch{
+  background-repeat:no-repeat!important;
+  background-position:center center!important;
+  background-size:100% 100%!important;
+}
