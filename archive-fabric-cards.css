@@ -1,73 +1,49 @@
+/* Creative Archive: oversized sewn quilt patches with real work previews. */
+.archive-patch-grid{gap:clamp(1.2rem,2.3vw,2.4rem);align-items:stretch}
+.archive-patch-grid .archive-fabric-patch{display:flex;flex-direction:column;min-height:350px;padding:15px 15px 19px;overflow:hidden;isolation:isolate;text-decoration:none;border:1px solid rgba(65,85,94,.18);box-shadow:5px 7px 0 rgba(65,85,94,.07),0 14px 26px rgba(48,55,52,.09);transition:transform .2s ease,box-shadow .2s ease}
+.archive-patch-grid .archive-fabric-patch::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.42;background-size:155px;background-repeat:repeat}
+.archive-patch-grid .archive-fabric-patch::after{inset:7px;border:2px dashed rgba(59,78,88,.3);border-radius:inherit;z-index:3}
+.archive-patch-grid .archive-design{background:#d8e4ec;border-radius:28px 40px 24px 36px;transform:rotate(-1.4deg)}
+.archive-patch-grid .archive-design::before{background-image:var(--blue-gingham)}
+.archive-patch-grid .archive-social{background:#d3dbc9;border-radius:39px 23px 35px 25px;transform:rotate(1.2deg)}
+.archive-patch-grid .archive-social::before{background-image:var(--sage-daisy)}
+.archive-patch-grid .archive-events{background:#f6e7b9;border-radius:25px 37px 28px 40px;transform:rotate(-.8deg)}
+.archive-patch-grid .archive-events::before{background-image:var(--yellow-daisy)}
+.archive-patch-grid .archive-photography{background:#f4eddf;border-radius:36px 26px 40px 24px;transform:rotate(1.5deg)}
+.archive-patch-grid .archive-photography::before{background-image:var(--vintage-floral)}
+.archive-patch-grid .archive-visual{position:relative;display:block;height:205px;flex:none;padding:0;margin:9px 8px 0;background:transparent!important;border:7px solid #fffdf8;border-radius:19px 13px 18px 15px;box-shadow:0 5px 15px rgba(45,54,60,.17);overflow:hidden;transform:rotate(-1deg)}
+.archive-patch-grid .archive-social .archive-visual,.archive-patch-grid .archive-photography .archive-visual{transform:rotate(1deg)}
+.archive-patch-grid .archive-visual::before{display:none!important}
+.archive-patch-grid .archive-visual img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;filter:none}
+.archive-patch-grid .archive-design .archive-visual img{object-position:center 24%}
+.archive-patch-grid .archive-content{position:relative;z-index:2;flex:1;padding:20px 13px 10px;background:transparent}
+.archive-patch-grid .archive-content span{display:block;margin-bottom:8px;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:#294c60}
+.archive-patch-grid .archive-content strong{display:block;font-size:clamp(1.15rem,1.45vw,1.4rem);line-height:1.28;color:#294c60}
+.archive-patch-grid .archive-fabric-patch:hover,.archive-patch-grid .archive-fabric-patch:focus-visible{transform:rotate(0) translateY(-6px);box-shadow:7px 12px 0 rgba(65,85,94,.08),0 20px 30px rgba(48,55,52,.13)}
+@media(max-width:900px){.archive-patch-grid .archive-fabric-patch{min-height:325px}.archive-patch-grid .archive-visual{height:190px}}
+@media(max-width:680px){.archive-patch-grid .archive-fabric-patch{transform:none!important;min-height:320px}.archive-patch-grid .archive-fabric-patch:hover{transform:translateY(-3px)!important}.archive-patch-grid .archive-visual{height:210px}}
+@media(prefers-reduced-motion:reduce){.archive-patch-grid .archive-fabric-patch{transition:none}}
 
-/* Single-piece fabric patches: no photographic overlays or picture frames. */
-.archive-patch-grid .archive-fabric-patch{
-  min-height:285px;
-  padding:0;
-  overflow:hidden;
-  box-shadow:5px 7px 0 rgba(65,85,94,.07),0 13px 24px rgba(48,55,52,.08);
-}
+/* Continuous fabric from edge to edge, behind the framed photo and label. */
+.archive-patch-grid .archive-fabric-patch{background-image:none!important}
 .archive-patch-grid .archive-fabric-patch::before{
   content:"";
+  display:block;
   position:absolute;
   inset:0;
   z-index:0;
   opacity:1;
-  background-size:175px;
+  background-position:center;
   background-repeat:repeat;
+  background-size:175px;
   pointer-events:none;
 }
-.archive-patch-grid .archive-fabric-patch::after{
-  content:"";
-  position:absolute;
-  inset:10px;
-  z-index:3;
-  border:2px dashed rgba(52,77,91,.38);
-  border-radius:inherit;
-  filter:none;
-}
-.archive-patch-grid .archive-design{background:#dbe7ed}
-.archive-patch-grid .archive-social{background:#dce3d3}
-.archive-patch-grid .archive-events{background:#f4e5b5}
-.archive-patch-grid .archive-photography{background:#f4e9df}
 .archive-patch-grid .archive-design::before{background-image:var(--blue-gingham)}
 .archive-patch-grid .archive-social::before{background-image:var(--sage-daisy)}
 .archive-patch-grid .archive-events::before{background-image:var(--yellow-daisy)}
 .archive-patch-grid .archive-photography::before{background-image:var(--vintage-floral)}
-.archive-patch-grid .archive-visual{display:none!important}
-.archive-patch-grid .archive-content{
-  position:relative;
-  z-index:2;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  min-height:285px;
-  padding:32px 23px;
-  text-align:center;
-  background:rgba(255,253,247,.12);
-}
-.archive-patch-grid .archive-content span,
-.archive-patch-grid .archive-content strong,
-.archive-patch-grid .archive-events .archive-content span,
-.archive-patch-grid .archive-events .archive-content strong{
-  color:#294c60;
-  text-shadow:none;
-}
-.archive-patch-grid .archive-content span{
-  margin:0 0 14px;
-  padding:6px 12px;
-  border-bottom:1px dashed rgba(41,76,96,.42);
-  font-size:.78rem;
-  font-weight:700;
-  letter-spacing:.15em;
-}
-.archive-patch-grid .archive-content strong{
-  max-width:230px;
-  font-size:clamp(1.3rem,1.7vw,1.7rem);
-  line-height:1.25;
-}
-.archive-patch-grid .archive-fabric-patch:hover .archive-visual img{transform:none}
-@media(max-width:680px){
-  .archive-patch-grid .archive-fabric-patch,
-  .archive-patch-grid .archive-content{min-height:245px}
-}
+.archive-patch-grid .archive-visual,
+.archive-patch-grid .archive-content{position:relative;z-index:1}
+.archive-patch-grid .archive-content{background:transparent!important}
+.archive-patch-grid .archive-visual{background:#fffdf8!important}
+.archive-patch-grid .archive-fabric-patch::after{z-index:3}
