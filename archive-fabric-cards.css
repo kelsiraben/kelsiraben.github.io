@@ -1,49 +1,55 @@
-/* Creative Archive: oversized sewn quilt patches with real work previews. */
-.archive-patch-grid{gap:clamp(1.2rem,2.3vw,2.4rem);align-items:stretch}
-.archive-patch-grid .archive-fabric-patch{display:flex;flex-direction:column;min-height:350px;padding:15px 15px 19px;overflow:hidden;isolation:isolate;text-decoration:none;border:1px solid rgba(65,85,94,.18);box-shadow:5px 7px 0 rgba(65,85,94,.07),0 14px 26px rgba(48,55,52,.09);transition:transform .2s ease,box-shadow .2s ease}
-.archive-patch-grid .archive-fabric-patch::before{content:"";position:absolute;inset:0;z-index:-1;opacity:.42;background-size:155px;background-repeat:repeat}
-.archive-patch-grid .archive-fabric-patch::after{inset:7px;border:2px dashed rgba(59,78,88,.3);border-radius:inherit;z-index:3}
-.archive-patch-grid .archive-design{background:#d8e4ec;border-radius:28px 40px 24px 36px;transform:rotate(-1.4deg)}
-.archive-patch-grid .archive-design::before{background-image:var(--blue-gingham)}
-.archive-patch-grid .archive-social{background:#d3dbc9;border-radius:39px 23px 35px 25px;transform:rotate(1.2deg)}
-.archive-patch-grid .archive-social::before{background-image:var(--sage-daisy)}
-.archive-patch-grid .archive-events{background:#f6e7b9;border-radius:25px 37px 28px 40px;transform:rotate(-.8deg)}
-.archive-patch-grid .archive-events::before{background-image:var(--yellow-daisy)}
-.archive-patch-grid .archive-photography{background:#f4eddf;border-radius:36px 26px 40px 24px;transform:rotate(1.5deg)}
-.archive-patch-grid .archive-photography::before{background-image:var(--vintage-floral)}
-.archive-patch-grid .archive-visual{position:relative;display:block;height:205px;flex:none;padding:0;margin:9px 8px 0;background:transparent!important;border:7px solid #fffdf8;border-radius:19px 13px 18px 15px;box-shadow:0 5px 15px rgba(45,54,60,.17);overflow:hidden;transform:rotate(-1deg)}
-.archive-patch-grid .archive-social .archive-visual,.archive-patch-grid .archive-photography .archive-visual{transform:rotate(1deg)}
-.archive-patch-grid .archive-visual::before{display:none!important}
-.archive-patch-grid .archive-visual img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;filter:none}
-.archive-patch-grid .archive-design .archive-visual img{object-position:center 24%}
-.archive-patch-grid .archive-content{position:relative;z-index:2;flex:1;padding:20px 13px 10px;background:transparent}
-.archive-patch-grid .archive-content span{display:block;margin-bottom:8px;font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;color:#294c60}
-.archive-patch-grid .archive-content strong{display:block;font-size:clamp(1.15rem,1.45vw,1.4rem);line-height:1.28;color:#294c60}
-.archive-patch-grid .archive-fabric-patch:hover,.archive-patch-grid .archive-fabric-patch:focus-visible{transform:rotate(0) translateY(-6px);box-shadow:7px 12px 0 rgba(65,85,94,.08),0 20px 30px rgba(48,55,52,.13)}
-@media(max-width:900px){.archive-patch-grid .archive-fabric-patch{min-height:325px}.archive-patch-grid .archive-visual{height:190px}}
-@media(max-width:680px){.archive-patch-grid .archive-fabric-patch{transform:none!important;min-height:320px}.archive-patch-grid .archive-fabric-patch:hover{transform:translateY(-3px)!important}.archive-patch-grid .archive-visual{height:210px}}
-@media(prefers-reduced-motion:reduce){.archive-patch-grid .archive-fabric-patch{transition:none}}
-
-/* Continuous fabric from edge to edge, behind the framed photo and label. */
-.archive-patch-grid .archive-fabric-patch{background-image:none!important}
-.archive-patch-grid .archive-fabric-patch::before{
-  content:"";
-  display:block;
-  position:absolute;
-  inset:0;
-  z-index:0;
-  opacity:1;
-  background-position:center;
-  background-repeat:repeat;
-  background-size:175px;
+/* Unified sewn-fabric cards, based on the supplied reference image. */
+.archive-patch-grid{gap:clamp(1.25rem,2.2vw,2rem);align-items:stretch}
+.archive-patch-grid .archive-fabric-patch{
+  position:relative;display:flex;flex-direction:column;justify-content:flex-start;
+  min-height:320px;padding:20px 18px 22px;
+  overflow:hidden;isolation:isolate;
+  border:1px solid rgba(70,78,67,.14);
+  box-shadow:3px 6px 0 rgba(65,85,94,.05),0 11px 24px rgba(45,52,48,.1);
+  background-repeat:repeat!important;
+  background-position:center!important;
+  background-size:175px 175px!important;
+  transition:transform .2s ease,box-shadow .2s ease;
+}
+.archive-patch-grid .archive-fabric-patch::before{display:none!important}
+.archive-patch-grid .archive-fabric-patch::after{
+  content:"";position:absolute;inset:9px;z-index:4;
+  border:1.5px dashed rgba(66,76,69,.35);border-radius:inherit;
   pointer-events:none;
 }
-.archive-patch-grid .archive-design::before{background-image:var(--blue-gingham)}
-.archive-patch-grid .archive-social::before{background-image:var(--sage-daisy)}
-.archive-patch-grid .archive-events::before{background-image:var(--yellow-daisy)}
-.archive-patch-grid .archive-photography::before{background-image:var(--vintage-floral)}
+.archive-patch-grid .archive-design{background-color:#dbe7ed!important;background-image:var(--blue-gingham)!important;border-radius:29px 39px 26px 36px;transform:rotate(-.7deg)}
+.archive-patch-grid .archive-social{background-color:#dce3d3!important;background-image:var(--sage-daisy)!important;border-radius:37px 24px 34px 27px;transform:rotate(.8deg)}
+.archive-patch-grid .archive-events{background-color:#f4e5b5!important;background-image:var(--yellow-daisy)!important;border-radius:26px 37px 28px 39px;transform:rotate(-.5deg)}
+.archive-patch-grid .archive-photography{background-color:#f4e9df!important;background-image:var(--vintage-floral)!important;border-radius:36px 26px 38px 25px;transform:rotate(.7deg)}
 .archive-patch-grid .archive-visual,
-.archive-patch-grid .archive-content{position:relative;z-index:1}
-.archive-patch-grid .archive-content{background:transparent!important}
-.archive-patch-grid .archive-visual{background:#fffdf8!important}
-.archive-patch-grid .archive-fabric-patch::after{z-index:3}
+.archive-patch-grid .archive-social .archive-visual,
+.archive-patch-grid .archive-photography .archive-visual{
+  display:block!important;position:relative;inset:auto;
+  width:auto;height:190px;flex:none;
+  margin:0 0 14px;padding:0;overflow:hidden;
+  border:6px solid #fffaf0;border-radius:13px 10px 12px 11px;
+  background:#fffaf0!important;
+  box-shadow:0 2px 7px rgba(34,47,44,.18);
+  transform:none;
+}
+.archive-patch-grid .archive-visual::before,.archive-patch-grid .archive-visual::after{display:none!important}
+.archive-patch-grid .archive-visual img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;border:0;filter:none!important}
+.archive-patch-grid .archive-design .archive-visual img{object-position:center 25%}
+.archive-patch-grid .archive-content{
+  display:block;position:relative;z-index:2;
+  min-height:0;flex:1;padding:0 8px 5px;
+  text-align:left;background:transparent!important;
+}
+.archive-patch-grid .archive-content span,
+.archive-patch-grid .archive-content strong,
+.archive-patch-grid .archive-events .archive-content span,
+.archive-patch-grid .archive-events .archive-content strong{
+  color:#294c60!important;text-shadow:none!important;
+}
+.archive-patch-grid .archive-content span{display:block;margin:0 0 8px;font-size:.69rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.archive-patch-grid .archive-content strong{display:block;font-family:var(--serif);font-size:clamp(1.1rem,1.4vw,1.3rem);line-height:1.25}
+.archive-patch-grid .archive-fabric-patch:hover,.archive-patch-grid .archive-fabric-patch:focus-visible{
+  transform:rotate(0) translateY(-5px);box-shadow:5px 10px 0 rgba(65,85,94,.06),0 17px 26px rgba(45,52,48,.13);
+}
+@media(max-width:680px){.archive-patch-grid .archive-fabric-patch{transform:none!important;min-height:310px}.archive-patch-grid .archive-visual{height:190px}}
+@media(prefers-reduced-motion:reduce){.archive-patch-grid .archive-fabric-patch{transition:none}}
