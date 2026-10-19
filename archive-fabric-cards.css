@@ -1,63 +1,43 @@
-/* Unified sewn-fabric cards, based on the supplied reference image. */
-.archive-patch-grid{gap:clamp(1.25rem,2.2vw,2rem);align-items:stretch}
+/* Seamless, softly worn fabric cards. Fabric fills the entire patch. */
+.archive-patch-grid{gap:clamp(1.2rem,2vw,2rem);align-items:stretch}
 .archive-patch-grid .archive-fabric-patch{
-  position:relative;display:flex;flex-direction:column;justify-content:flex-start;
-  min-height:320px;padding:20px 18px 22px;
-  overflow:hidden;isolation:isolate;
-  border:1px solid rgba(70,78,67,.14);
-  box-shadow:3px 6px 0 rgba(65,85,94,.05),0 11px 24px rgba(45,52,48,.1);
-  background-repeat:repeat!important;
-  background-position:center!important;
-  background-size:175px 175px!important;
-  transition:transform .2s ease,box-shadow .2s ease;
+ position:relative;display:flex;flex-direction:column;min-height:330px;
+ padding:19px 18px 21px;overflow:hidden;isolation:isolate;
+ background-position:center!important;background-repeat:repeat!important;background-size:180px 180px!important;
+ border:1px solid rgba(71,82,75,.19);box-shadow:3px 6px 0 rgba(68,76,70,.06),0 13px 24px rgba(50,60,54,.11);
+ transition:transform .2s ease,box-shadow .2s ease
 }
 .archive-patch-grid .archive-fabric-patch::before{display:none!important}
 .archive-patch-grid .archive-fabric-patch::after{
-  content:"";position:absolute;inset:9px;z-index:4;
-  border:1.5px dashed rgba(66,76,69,.35);border-radius:inherit;
-  pointer-events:none;
+ content:"";position:absolute;inset:9px;z-index:3;border:1.5px dashed rgba(59,73,69,.46);border-radius:inherit;pointer-events:none
 }
-.archive-patch-grid .archive-design{background-color:#dbe7ed!important;background-image:var(--blue-gingham)!important;border-radius:29px 39px 26px 36px;transform:rotate(-.7deg)}
-.archive-patch-grid .archive-social{background-color:#dce3d3!important;background-image:var(--sage-daisy)!important;border-radius:37px 24px 34px 27px;transform:rotate(.8deg)}
-.archive-patch-grid .archive-events{background-color:#f4e5b5!important;background-image:var(--yellow-daisy)!important;border-radius:26px 37px 28px 39px;transform:rotate(-.5deg)}
-.archive-patch-grid .archive-photography{background-color:#f4e9df!important;background-image:var(--vintage-floral)!important;border-radius:36px 26px 38px 25px;transform:rotate(.7deg)}
-.archive-patch-grid .archive-visual,
-.archive-patch-grid .archive-social .archive-visual,
-.archive-patch-grid .archive-photography .archive-visual{
-  display:block!important;position:relative;inset:auto;
-  width:auto;height:190px;flex:none;
-  margin:0 0 14px;padding:0;overflow:hidden;
-  border:6px solid #fffaf0;border-radius:13px 10px 12px 11px;
-  background:#fffaf0!important;
-  box-shadow:0 2px 7px rgba(34,47,44,.18);
-  transform:none;
+.archive-patch-grid .archive-design{background:#dbe7ed url("assets/quilt-elements/archive-gingham.svg")!important;border-radius:31px 39px 26px 36px;transform:rotate(-.6deg)}
+.archive-patch-grid .archive-social{background:#a7af94 url("assets/quilt-elements/archive-sage-floral.svg")!important;border-radius:37px 26px 35px 28px;transform:rotate(.6deg)}
+.archive-patch-grid .archive-events{background:#e7cb85 url("assets/quilt-elements/archive-butter-floral.svg")!important;border-radius:27px 37px 30px 39px;transform:rotate(-.5deg)}
+.archive-patch-grid .archive-photography{background:#ebdecc url("assets/quilt-elements/archive-vintage-floral.svg")!important;border-radius:37px 28px 39px 26px;transform:rotate(.7deg)}
+.archive-patch-grid .archive-visual,.archive-patch-grid .archive-social .archive-visual,.archive-patch-grid .archive-photography .archive-visual{
+ display:block!important;position:relative;inset:auto;width:auto;height:192px;flex:none;
+ margin:0 0 13px;padding:0;overflow:hidden;border:6px solid #fff8ed;border-radius:13px 11px 14px 11px;
+ background:#fff8ed!important;box-shadow:0 2px 8px rgba(41,49,43,.2);transform:none
 }
 .archive-patch-grid .archive-visual::before,.archive-patch-grid .archive-visual::after{display:none!important}
-.archive-patch-grid .archive-visual img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;border:0;filter:none!important}
-.archive-patch-grid .archive-design .archive-visual img{object-position:center 25%}
+.archive-patch-grid .archive-visual img{display:block;width:100%;height:100%;object-fit:cover;object-position:center;filter:none!important}
+.archive-patch-grid .archive-design .archive-visual img{object-position:center 24%}
 .archive-patch-grid .archive-content{
-  display:block;position:relative;z-index:2;
-  min-height:0;flex:1;padding:0 8px 5px;
-  text-align:left;background:transparent!important;
+ position:relative;z-index:2;display:block;flex:1;min-height:0;
+ padding:12px 13px 13px;text-align:left;
+ background:rgba(255,249,235,.91)!important;
+ border:1px solid rgba(118,101,79,.18);border-radius:8px 12px 9px 11px;
+ box-shadow:0 2px 4px rgba(58,59,49,.07)
 }
-.archive-patch-grid .archive-content span,
-.archive-patch-grid .archive-content strong,
-.archive-patch-grid .archive-events .archive-content span,
-.archive-patch-grid .archive-events .archive-content strong{
-  color:#294c60!important;text-shadow:none!important;
+.archive-patch-grid .archive-content span,.archive-patch-grid .archive-content strong,
+.archive-patch-grid .archive-events .archive-content span,.archive-patch-grid .archive-events .archive-content strong{
+ color:#24495d!important;text-shadow:none!important
 }
-.archive-patch-grid .archive-content span{display:block;margin:0 0 8px;font-size:.69rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
-.archive-patch-grid .archive-content strong{display:block;font-family:var(--serif);font-size:clamp(1.1rem,1.4vw,1.3rem);line-height:1.25}
+.archive-patch-grid .archive-content span{display:block;margin:0 0 6px;font-size:.7rem;letter-spacing:.12em;font-weight:700;text-transform:uppercase}
+.archive-patch-grid .archive-content strong{display:block;font-family:var(--serif);font-size:clamp(1.1rem,1.4vw,1.32rem);line-height:1.28}
 .archive-patch-grid .archive-fabric-patch:hover,.archive-patch-grid .archive-fabric-patch:focus-visible{
-  transform:rotate(0) translateY(-5px);box-shadow:5px 10px 0 rgba(65,85,94,.06),0 17px 26px rgba(45,52,48,.13);
+ transform:rotate(0) translateY(-5px);box-shadow:5px 10px 0 rgba(68,76,70,.07),0 18px 28px rgba(50,60,54,.13)
 }
-@media(max-width:680px){.archive-patch-grid .archive-fabric-patch{transform:none!important;min-height:310px}.archive-patch-grid .archive-visual{height:190px}}
+@media(max-width:680px){.archive-patch-grid .archive-fabric-patch{transform:none!important;min-height:320px}.archive-patch-grid .archive-visual{height:190px}}
 @media(prefers-reduced-motion:reduce){.archive-patch-grid .archive-fabric-patch{transition:none}}
-
-/* Fix: quilt-element images are individual patch illustrations, not seamless tiles.
-   Stretch one patch across each card rather than repeating small squares. */
-.archive-patch-grid .archive-fabric-patch{
-  background-repeat:no-repeat!important;
-  background-position:center center!important;
-  background-size:100% 100%!important;
-}
