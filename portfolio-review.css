@@ -1,0 +1,14 @@
+/* Staged employer-readiness polish. Keep existing quilt design intact. */
+html{scroll-padding-top:6rem}
+:focus-visible{outline:3px solid #294c60;outline-offset:4px}
+img{max-width:100%;height:auto}
+.portfolio-results{margin:clamp(2rem,5vw,4rem) 0;padding:clamp(1.5rem,4vw,3rem);background:#faf7f0;border:1px dashed #8096a0;border-radius:1.25rem}
+.portfolio-results h3{margin:0 0 1.5rem;font-family:Fraunces,serif;font-size:clamp(1.5rem,3vw,2.5rem)}
+.portfolio-results-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}
+.portfolio-results-grid a{display:flex;flex-direction:column;gap:.65rem;padding:1.4rem;background:#fffdf8;border:1px solid #d5d9d2;border-radius:1rem;color:#243b53;text-decoration:none}
+.portfolio-results-grid strong{font-size:clamp(1.1rem,2vw,1.45rem)}
+.portfolio-results-grid span{line-height:1.55}
+.archive-card{text-decoration:none;color:inherit}
+.archive-card:focus-visible,.archive-card:hover{outline:2px solid #294c60;outline-offset:4px}
+@media(max-width:760px){.portfolio-results-grid{grid-template-columns:1fr}.portfolio-results{padding:1.25rem}.nav-work-menu{max-width:calc(100vw - 2rem)}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
