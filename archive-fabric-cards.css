@@ -55,3 +55,15 @@
 }
 .archive-patch-grid .archive-content{z-index:2;background:rgba(255,249,235,.94)!important}
 .archive-patch-grid .archive-visual{z-index:2}
+
+/* Restore the user's original handmade fabric artwork.
+   Enlarge a single original patch to crop its raw edges rather than tile it. */
+.archive-patch-grid .archive-fabric-patch{
+ background-repeat:no-repeat!important;
+ background-position:center center!important;
+ background-size:255% 255%!important;
+}
+.archive-patch-grid .archive-design{background-image:var(--blue-gingham)!important}
+.archive-patch-grid .archive-social{background-image:var(--sage-daisy)!important}
+.archive-patch-grid .archive-events{background-image:var(--yellow-daisy)!important}
+.archive-patch-grid .archive-photography{background-image:var(--vintage-floral)!important}
