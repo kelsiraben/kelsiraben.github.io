@@ -11,10 +11,10 @@
 .archive-patch-grid .archive-fabric-patch::after{
  content:"";position:absolute;inset:9px;z-index:3;border:1.5px dashed rgba(59,73,69,.46);border-radius:inherit;pointer-events:none
 }
-.archive-patch-grid .archive-design{background:#dbe7ed url("assets/quilt-elements/archive-gingham.svg")!important;border-radius:31px 39px 26px 36px;transform:rotate(-.6deg)}
-.archive-patch-grid .archive-social{background:#a7af94 url("assets/quilt-elements/archive-sage-floral.svg")!important;border-radius:37px 26px 35px 28px;transform:rotate(.6deg)}
-.archive-patch-grid .archive-events{background:#e7cb85 url("assets/quilt-elements/archive-butter-floral.svg")!important;border-radius:27px 37px 30px 39px;transform:rotate(-.5deg)}
-.archive-patch-grid .archive-photography{background:#ebdecc url("assets/quilt-elements/archive-vintage-floral.svg")!important;border-radius:37px 28px 39px 26px;transform:rotate(.7deg)}
+.archive-patch-grid .archive-design{background:#dbe7ed url("assets/quilt-elements/archive-gingham.svg?v=2")!important;border-radius:31px 39px 26px 36px;transform:rotate(-.6deg)}
+.archive-patch-grid .archive-social{background:#a7af94 url("assets/quilt-elements/archive-sage-floral.svg?v=2")!important;border-radius:37px 26px 35px 28px;transform:rotate(.6deg)}
+.archive-patch-grid .archive-events{background:#e7cb85 url("assets/quilt-elements/archive-butter-floral.svg?v=2")!important;border-radius:27px 37px 30px 39px;transform:rotate(-.5deg)}
+.archive-patch-grid .archive-photography{background:#ebdecc url("assets/quilt-elements/archive-vintage-floral.svg?v=2")!important;border-radius:37px 28px 39px 26px;transform:rotate(.7deg)}
 .archive-patch-grid .archive-visual,.archive-patch-grid .archive-social .archive-visual,.archive-patch-grid .archive-photography .archive-visual{
  display:block!important;position:relative;inset:auto;width:auto;height:192px;flex:none;
  margin:0 0 13px;padding:0;overflow:hidden;border:6px solid #fff8ed;border-radius:13px 11px 14px 11px;
@@ -41,3 +41,17 @@
 }
 @media(max-width:680px){.archive-patch-grid .archive-fabric-patch{transform:none!important;min-height:320px}.archive-patch-grid .archive-visual{height:190px}}
 @media(prefers-reduced-motion:reduce){.archive-patch-grid .archive-fabric-patch{transition:none}}
+
+/* Soft worn quilt finish, without fading the framed portfolio images or text. */
+.archive-patch-grid .archive-fabric-patch::before{
+ display:block!important;content:"";position:absolute;inset:0;z-index:1;
+ pointer-events:none;opacity:.3;
+ background-image:radial-gradient(ellipse at 18% 14%,rgba(255,250,230,.25),transparent 49%),radial-gradient(ellipse at 85% 78%,rgba(255,248,227,.2),transparent 51%);
+ background-size:100% 100%;background-repeat:no-repeat;
+}
+.archive-patch-grid .archive-fabric-patch::after{
+ border-color:rgba(77,83,69,.32);border-width:1px;
+ border-style:dashed;opacity:.78;
+}
+.archive-patch-grid .archive-content{z-index:2;background:rgba(255,249,235,.94)!important}
+.archive-patch-grid .archive-visual{z-index:2}
