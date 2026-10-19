@@ -23,3 +23,85 @@
 @media(max-width:900px){.archive-patch-grid .archive-fabric-patch{min-height:325px}.archive-patch-grid .archive-visual{height:190px}}
 @media(max-width:680px){.archive-patch-grid .archive-fabric-patch{transform:none!important;min-height:320px}.archive-patch-grid .archive-fabric-patch:hover{transform:translateY(-3px)!important}.archive-patch-grid .archive-visual{height:210px}}
 @media(prefers-reduced-motion:reduce){.archive-patch-grid .archive-fabric-patch{transition:none}}
+
+/* Unified quilt patches: the entire card is one piece, not a photo mounted on fabric. */
+.archive-patch-grid .archive-fabric-patch{
+  min-height:330px;
+  padding:0;
+  overflow:hidden;
+  border:1px solid rgba(65,85,94,.16);
+  background-image:none;
+}
+.archive-patch-grid .archive-fabric-patch::before{
+  inset:0;
+  z-index:1;
+  opacity:.26;
+  background-size:150px;
+  pointer-events:none;
+}
+.archive-patch-grid .archive-fabric-patch::after{
+  inset:9px;
+  z-index:5;
+  border:2px dashed rgba(255,255,255,.75);
+  border-radius:inherit;
+  filter:drop-shadow(0 1px 1px rgba(30,42,48,.3));
+}
+.archive-patch-grid .archive-visual,
+.archive-patch-grid .archive-social .archive-visual,
+.archive-patch-grid .archive-photography .archive-visual{
+  position:absolute;
+  inset:0;
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  transform:none;
+  overflow:hidden;
+}
+.archive-patch-grid .archive-visual::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(180deg,rgba(15,35,43,.02) 20%,rgba(20,37,45,.10) 46%,rgba(19,37,47,.86) 100%);
+}
+.archive-patch-grid .archive-visual img{
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+  border:0;
+  border-radius:0;
+  box-shadow:none;
+  transition:transform .3s ease;
+}
+.archive-patch-grid .archive-design .archive-visual img{object-position:center 35%}
+.archive-patch-grid .archive-content{
+  position:relative;
+  z-index:4;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  flex:1;
+  min-height:330px;
+  padding:40px 26px 30px;
+  background:transparent;
+}
+.archive-patch-grid .archive-content span,
+.archive-patch-grid .archive-content strong,
+.archive-patch-grid .archive-events .archive-content span,
+.archive-patch-grid .archive-events .archive-content strong{
+  color:#fffdf6;
+  text-shadow:0 1px 5px rgba(15,30,38,.42);
+}
+.archive-patch-grid .archive-fabric-patch:hover .archive-visual img{transform:scale(1.045)}
+@media(max-width:680px){
+  .archive-patch-grid .archive-fabric-patch,
+  .archive-patch-grid .archive-content{min-height:320px}
+}
+@media(prefers-reduced-motion:reduce){
+  .archive-patch-grid .archive-visual img{transition:none}
+}
