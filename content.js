@@ -31,6 +31,6 @@ const portfolioProjects = [
 
 const portfolioContact = {
   email: "kelsi.raben@gmail.com",
-  linkedin: "#",
-  resume: "#"
+  linkedin: "https://www.linkedin.com/in/kelsi-raben-27b050206/",
+  resume: "assets/resume/Resume%208.4.2026.pdf"
 };
