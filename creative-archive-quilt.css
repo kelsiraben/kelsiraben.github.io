@@ -69,3 +69,21 @@
 .archive-jump a:nth-child(4n+4){background-color:#f3e6b9!important}
 .archive-thread{background:#f1e1d9;box-shadow:none}
 @media(max-width:540px){.gallery-figure img{height:auto!important;max-height:380px}}
+
+/* Featured quilt patches, understated linen/paper texture for everything else */
+.gallery-figure:nth-child(n),.recent-work-card:nth-child(n){
+ background-color:#f1eee6!important;
+ background-image:repeating-linear-gradient(0deg,transparent 0 3px,#5e647006 3px 4px),repeating-linear-gradient(90deg,transparent 0 3px,#5e647005 3px 4px)!important;
+ border-color:#d6d0c4!important;
+}
+.gallery-figure:nth-child(4n+2):not(.quilt-feature),.recent-work-card:nth-child(4n+2):not(.quilt-feature){background-color:#e6ece8!important}
+.gallery-figure:nth-child(4n+3):not(.quilt-feature),.recent-work-card:nth-child(4n+3):not(.quilt-feature){background-color:#e8edf0!important}
+.gallery-figure:nth-child(4n+4):not(.quilt-feature),.recent-work-card:nth-child(4n+4):not(.quilt-feature){background-color:#f2ead8!important}
+.gallery-figure.quilt-feature,.recent-work-card.quilt-feature{border:2px solid #a9aaa0!important;box-shadow:0 5px 15px #243b531c!important}
+.gallery-figure.quilt-feature::after,.recent-work-card.quilt-feature::after{display:block!important;content:"";position:absolute;inset:6px;border:1px dashed #65717a8a;border-radius:10px;pointer-events:none}
+.gallery-figure.quilt-feature:nth-child(4n+1),.recent-work-card.quilt-feature:nth-child(4n+1){background:#dbe5e8 url("assets/quilt-elements/archive-gingham.svg") center/180px!important}
+.gallery-figure.quilt-feature:nth-child(4n+2),.recent-work-card.quilt-feature:nth-child(4n+2){background:#e7cf88 url("assets/quilt-elements/archive-butter-floral.svg") center/180px!important}
+.gallery-figure.quilt-feature:nth-child(4n+3),.recent-work-card.quilt-feature:nth-child(4n+3){background:#e8dcca url("assets/quilt-elements/archive-vintage-floral.svg") center/180px!important}
+.gallery-figure.quilt-feature:nth-child(4n+4),.recent-work-card.quilt-feature:nth-child(4n+4){background:#dce5d4 url("assets/quilt-elements/archive-sage-floral.svg") center/180px!important}
+.gallery-figure.quilt-feature figcaption{background:#fffaf2!important;border-radius:7px;padding:1rem!important;margin-top:10px}
+.recent-work-card.quilt-feature>*{background:#fffaf2e8;border-radius:5px;padding:.2rem .35rem}
