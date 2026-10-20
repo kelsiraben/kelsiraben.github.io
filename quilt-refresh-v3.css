@@ -1530,3 +1530,11 @@ footer{
   }
 }
 
+
+/* Mobile work cards: faster scanning without altering desktop composition */
+@media(max-width:680px){
+ .project-card{min-height:295px!important;padding:1.65rem!important}
+ .project-card h3{margin-bottom:.65rem!important;line-height:1.12!important;font-size:clamp(1.8rem,7vw,2.2rem)!important}
+ .project-card p{line-height:1.5!important;font-size:.94rem!important}
+ .project-number{top:1.35rem!important;left:1.65rem!important}
+}
